@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Trash2 } from "lucide-react";
 import { useApp } from "@/lib/app-context";
+import { getJSON } from "@/lib/api";
 import type { AnimLevel } from "@/lib/types";
 import Gajju from "@/components/Gajju";
 import { LanguageSwitch } from "@/components/AppShell";
@@ -23,7 +24,7 @@ export default function Settings() {
   const { t, anim, setAnim, theme, setTheme, textSize, setTextSize, clearData, toast, profile, reducedMotion, lang } = useApp();
   const [confirm, setConfirm] = useState(false);
   const [recorder, setRecorder] = useState(false); // dev-only tool; the production backend refuses it
-  useEffect(() => { fetch("/api/asr-clips").then((r) => setRecorder(r.ok)).catch(() => {}); }, []);
+  useEffect(() => { getJSON<{ env?: string }>("/api/meta").then((m) => setRecorder(m.env !== "production")).catch(() => {}); }, []);
   return (
     <motion.div variants={pageIn} initial="hidden" animate="show" className="mx-auto max-w-2xl px-4 pb-12 pt-4">
       <div className="flex items-center gap-3"><Gajju state={anim === "off" ? "idle" : "wave"} size={72} /><h1 className="text-2xl font-extrabold">{t("settings")}</h1></div>

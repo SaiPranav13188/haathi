@@ -352,6 +352,7 @@ async def meta() -> dict:
         "engine": {"embedder": r.embedder.name, "reranker": getattr(r.reranker, "name", "off"), "llm": llm.available(),
                    "retrieval": get_settings().retrieval, "crosslingual": get_settings().crosslingual},
         "fields": len(FIELDS),
+        "env": get_settings().env,
     }
 
 

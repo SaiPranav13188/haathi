@@ -46,7 +46,16 @@ class Settings(BaseSettings):
     gemini_api_key: str | None = Field(default=None, validation_alias=AliasChoices("GEMINI_API_KEY", "HAATHI_GEMINI_API_KEY"))
     gemini_model: str = "gemini-3.5-flash-lite"  # free tier: 15 requests/min
     gemini_fallback_model: str = "gemini-3.8-flash"  # free tier: only 20 requests/day
-    gemini_rpm: int = 14
+    gemini_rpm: int = 14  # stay just under the free-tier per-minute limit
+    # longest we'll wait on a per-minute rate limit; keep it short for live chat (fall back to built-in answers).
+    # Batch jobs (eval/) set HAATHI_GEMINI_MAX_WAIT_S=65 to wait instead.
+    gemini_max_wait_s: float = 2.0
+    # some cloud hosts try IPv6 first and stall ~20 s before falling back; Gemini works fine over IPv4
+    gemini_force_ipv4: bool = True
+    # live chat never waits long on Gemini: after this many seconds the built-in answer is used instead, and a
+    # slow/overloaded Gemini is skipped for `gemini_cooldown_s`. Batch eval sets HAATHI_GEMINI_TIMEOUT_S=120.
+    gemini_timeout_s: float = 6.0
+    gemini_cooldown_s: float = 30.0
     gemini_live_model: str = "gemini-2.5-flash-native-audio-latest"  # streams the speaker's words while they talk  # stay just under the free-tier per-minute limit
     ollama_url: str | None = None
     ollama_model: str = "qwen2.5:3b"

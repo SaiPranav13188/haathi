@@ -31,6 +31,11 @@ def classify(text: str, mentioned: list[str], n_facts: int) -> str:
         if BENEFIT.search(t):
             return "benefit"
         return "scheme_info"
-    if FIND.search(t) or n_facts >= 1 or ELIGIBILITY.search(t):
+    if n_facts >= 1:
         return "find_schemes"
+    if FIND.search(t) or ELIGIBILITY.search(t):
+        from .facts import is_about_self
+
+        # "which schemes can I get" → interview; "any scheme for artisans?" → answer about that group
+        return "find_schemes" if is_about_self(t) else "general"
     return "general"

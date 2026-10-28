@@ -3,6 +3,10 @@ from __future__ import annotations
 
 import asyncio
 import json
+import os
+
+os.environ.setdefault("HAATHI_GEMINI_MAX_WAIT_S", "65")  # batch runs may wait out per-minute limits
+os.environ.setdefault("HAATHI_GEMINI_TIMEOUT_S", "120")  # and wait for slow Gemini answers
 import statistics
 import sys
 import time

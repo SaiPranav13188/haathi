@@ -14,7 +14,7 @@ GREETING = T(
     "నమస్తే! నేను హాథీ 🐘. మీ గురించి కొంచెం చెప్పండి (ఉదా: \"నేను తెలంగాణలో 2 ఎకరాల రైతుని\"), మీకు అర్హత ఉన్న ప్రభుత్వ పథకాలను అధికారిక నియమాల ఆధారంతో వెతికి చెబుతాను.",
 )
 THANKS = T("You're welcome! Ask me anything else about schemes.", "आपका स्वागत है! योजनाओं के बारे में और कुछ भी पूछिए।", "సంతోషం! పథకాల గురించి ఇంకేమైనా అడగండి.")
-ASK_INTRO = T("To check the right schemes, {n} quick question{s}:", "सही योजनाएँ जाँचने के लिए {n} छोटे सवाल:", "సరైన పథకాలు చూడటానికి {n} చిన్న ప్రశ్న{s}:")
+ASK_INTRO = T("To check the right schemes, {n} quick question{s}:", "सही योजनाएँ जाँचने के लिए {n} छोटे सवाल:", "సరైన పథకాలు చూడటానికి {n} చిన్న ప్రశ్నలు:")
 SO_FAR = T("So far: {e} likely, {m} still to check.", "अब तक: {e} संभावित, {m} जाँचनी बाकी।", "ఇప్పటివరకు: {e} అర్హత ఉండొచ్చు, ఇంకా {m} చూడాలి.")
 ELIGIBLE_HEAD = T("You're likely eligible for {n} scheme{s}:", "आप {n} योजनाओं के लिए संभवतः पात्र हैं:", "మీరు {n} పథకాలకు అర్హులు కావచ్చు:")
 ELIGIBLE_ONE = T("You're likely eligible for {name}.", "आप {name} के लिए संभवतः पात्र हैं।", "మీరు {name}కు అర్హులు కావచ్చు.")

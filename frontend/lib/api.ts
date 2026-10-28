@@ -1,4 +1,5 @@
 import type { Lang, Profile, StreamEvent } from "./types";
+import { wakeFetch } from "./wake";
 
 export interface ChatBody {
   message: string; lang: Lang; profile: Profile; pending: string[]; asked: string[]; focus: string[]; skip_questions?: boolean;
@@ -6,7 +7,7 @@ export interface ChatBody {
 
 /** POST + Server-Sent Events over fetch (EventSource can't POST). Calls onEvent for every event. */
 export async function streamChat(body: ChatBody, onEvent: (e: StreamEvent) => void, signal?: AbortSignal): Promise<void> {
-  const res = await fetch("/api/chat", {
+  const res = await wakeFetch("/api/chat", {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body), signal,
   });
   if (!res.ok || !res.body) throw new Error(`HTTP ${res.status}`);
@@ -31,13 +32,13 @@ export async function streamChat(body: ChatBody, onEvent: (e: StreamEvent) => vo
 }
 
 export async function postJSON<T>(url: string, body: unknown): Promise<T> {
-  const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const res = await wakeFetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json() as Promise<T>;
 }
 
 export async function getJSON<T>(url: string): Promise<T> {
-  const res = await fetch(url);
+  const res = await wakeFetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json() as Promise<T>;
 }

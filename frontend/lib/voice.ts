@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { toWav16k } from "./audio";
+import { ensureAwake, wakeFetch } from "./wake";
 import type { Lang } from "./types";
 
 const LOCALE: Record<Lang, string> = { en: "en-IN", hi: "hi-IN", te: "te-IN" };
@@ -49,7 +50,7 @@ function toPcm16(input: Float32Array, rate: number): ArrayBuffer {
 let serverAsr: Promise<boolean> | null = null;
 /** Server speech-to-text (Gemini) is used whenever the backend has an LLM; it handles Telugu in every browser. */
 function hasServerAsr(): Promise<boolean> {
-  serverAsr ??= fetch("/api/meta").then((r) => r.json()).then((m) => !!m?.engine?.llm).catch(() => false);
+  serverAsr ??= wakeFetch("/api/meta").then((r) => r.json()).then((m) => !!m?.engine?.llm).catch(() => false);
   return serverAsr;
 }
 
@@ -102,7 +103,7 @@ export function useVoiceInput(lang: Lang, onText: (text: string, final: boolean)
       const fd = new FormData();
       fd.append("audio", wav, "voice.wav");
       fd.append("lang", lang);
-      const r = await fetch("/api/asr", { method: "POST", body: fd });
+      const r = await wakeFetch("/api/asr", { method: "POST", body: fd });
       if (!r.ok) throw new Error(String(r.status));
       const t = (((await r.json()) as { text: string }).text || "").trim();
       setPhase("idle");
@@ -154,6 +155,7 @@ export function useVoiceInput(lang: Lang, onText: (text: string, final: boolean)
 
   /** Gemini Live: send 100 ms PCM chunks over a WebSocket, receive the growing transcript. */
   const startStreaming = useCallback(async (): Promise<boolean> => {
+    if (!(await ensureAwake())) return false;
     const ws = new WebSocket(liveSocketUrl());
     ws.binaryType = "arraybuffer";
     const ready = await new Promise<boolean>((res) => {

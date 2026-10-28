@@ -66,14 +66,28 @@ def _warn_once(model: str, kind: str, text: str) -> None:
         log.warning(text)
 
 
-async def _paced(model: str):
+_recent: dict[str, list[float]] = {}
+
+
+async def _paced(model: str) -> bool:
+    """Sliding-window limiter: bursts are fine; only when `gemini_rpm` calls happened in the last 60 s do we wait,
+    and never longer than `gemini_max_wait_s` (returns False = skip the LLM this time)."""
     lock = _pace_locks.setdefault(model, asyncio.Lock())
+    s = get_settings()
     async with lock:
-        gap = 60.0 / max(get_settings().gemini_rpm, 1)
-        wait = _last_call.get(model, 0.0) + gap - time.time()
-        if wait > 0:
+        now = time.time()
+        window = [t for t in _recent.get(model, []) if now - t < 60.0]
+        if len(window) >= max(s.gemini_rpm, 1):
+            wait = 60.0 - (now - window[0])
+            if wait > s.gemini_max_wait_s:
+                _stats["quota_skips"] += 1
+                return False
             await asyncio.sleep(wait)
+            window = window[1:]
+        window.append(time.time())
+        _recent[model] = window
         _last_call[model] = time.time()
+        return True
 
 
 async def _gemini_with_quota(model: str, *args) -> str | None:
@@ -81,9 +95,18 @@ async def _gemini_with_quota(model: str, *args) -> str | None:
         if not _usable(model):
             _stats["quota_skips"] += 1
             return None
-        await _paced(model)
+        if not await _paced(model):
+            return None
+        s = get_settings()
         try:
-            return await _gemini(model, *args)
+            return await asyncio.wait_for(_gemini(model, *args), timeout=s.gemini_timeout_s)
+        except asyncio.TimeoutError:
+            # Gemini is slow right now: don't make people wait, use built-in answers for a short while
+            _stats["timeouts"] = _stats.get("timeouts", 0) + 1
+            for m in {model, *_models()}:
+                _blocked_until[m] = max(_blocked_until.get(m, 0.0), time.time() + s.gemini_cooldown_s)
+            _warn_once(model, "slow", f"Gemini {model} took over {s.gemini_timeout_s:.0f}s; using built-in answers for {s.gemini_cooldown_s:.0f}s")
+            return None
         except Exception as e:
             msg = str(e)
             kind = quota_kind(msg)
@@ -94,11 +117,19 @@ async def _gemini_with_quota(model: str, *args) -> str | None:
                 _warn_once(model, "day", f"Gemini {model}: free daily quota used up; skipping it for "
                                          f"{delay / 3600:.1f} h (Haathi keeps working with built-in answers)")
                 return None
-            if kind == "minute" and attempt == 0:
-                delay = min(_retry_seconds(msg), 65.0)
-                _warn_once(model, "minute", f"Gemini {model}: per-minute limit hit; waiting {delay:.0f}s and pacing requests")
-                await asyncio.sleep(delay)
-                continue
+            if "503" in msg or "UNAVAILABLE" in msg:  # overloaded ("high demand"): try the other model, then cool down
+                _blocked_until[model] = time.time() + get_settings().gemini_cooldown_s
+                _warn_once(model, "busy", f"Gemini {model} is overloaded; skipping it for {get_settings().gemini_cooldown_s:.0f}s")
+                return None
+            if kind == "minute":
+                delay = _retry_seconds(msg)
+                if attempt == 0 and delay <= get_settings().gemini_max_wait_s:
+                    await asyncio.sleep(delay)
+                    continue
+                # don't make a person wait: park this model briefly and fall back to built-in answers
+                _blocked_until[model] = time.time() + min(delay, 65.0)
+                _warn_once(model, "minute", f"Gemini {model}: per-minute limit hit; using built-in answers for {delay:.0f}s")
+                return None
             _warn_once(model, "error", f"Gemini {model} failed: {msg[:160]}")
             return None
     return None
@@ -106,7 +137,8 @@ async def _gemini_with_quota(model: str, *args) -> str | None:
 
 def stats() -> dict:
     now = time.time()
-    return {**_stats, "blocked_models": {m: round((t - now) / 60) for m, t in _blocked_until.items() if t > now}}
+    avg = round(_stats.get("ms_total", 0) / _stats["calls"]) if _stats["calls"] else None
+    return {**_stats, "ms_avg_per_call": avg, "blocked_models": {m: round((t - now) / 60) for m, t in _blocked_until.items() if t > now}}
 
 
 def _cache_path(key: str) -> Path:
@@ -160,12 +192,31 @@ async def complete_json(prompt: str, system: str | None = None, **kw) -> dict | 
         return None
 
 
-async def _gemini(model: str, prompt: str, system: str | None, json_mode: bool, temperature: float,
-                  audio: tuple[bytes, str] | None) -> str:
+_clients: dict[int, object] = {}
+
+
+def _client():
+    """One Gemini client per event loop, reused across requests (a new client per call means a fresh TLS
+    connection each time, which is very slow on small servers)."""
     from google import genai
     from google.genai import types
 
-    client = genai.Client(api_key=get_settings().gemini_api_key)
+    loop = id(asyncio.get_running_loop())
+    if loop not in _clients:
+        s = get_settings()
+        transport = httpx.AsyncHTTPTransport(local_address="0.0.0.0", retries=1) if s.gemini_force_ipv4 else None
+        ac = httpx.AsyncClient(transport=transport, timeout=httpx.Timeout(60.0, connect=10.0))
+        _clients.clear()  # old loops are gone (batch scripts call asyncio.run repeatedly)
+        _clients[loop] = genai.Client(api_key=s.gemini_api_key, http_options=types.HttpOptions(httpx_async_client=ac))
+    return _clients[loop]
+
+
+async def _gemini(model: str, prompt: str, system: str | None, json_mode: bool, temperature: float,
+                  audio: tuple[bytes, str] | None) -> str:
+    from google.genai import types
+
+    client = _client()
+    t0 = time.perf_counter()
     contents: list = [prompt]
     if audio:
         contents = [types.Part.from_bytes(data=audio[0], mime_type=audio[1]), prompt]
@@ -175,6 +226,7 @@ async def _gemini(model: str, prompt: str, system: str | None, json_mode: bool, 
     )
     _stats["calls"] += 1
     resp = await client.aio.models.generate_content(model=model, contents=contents, config=cfg)
+    _stats["ms_total"] = _stats.get("ms_total", 0) + (time.perf_counter() - t0) * 1000
     um = getattr(resp, "usage_metadata", None)
     if um:
         _stats["tokens_in"] += um.prompt_token_count or 0

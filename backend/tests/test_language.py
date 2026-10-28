@@ -76,6 +76,8 @@ def test_never_extracts_ids():
     ("which schemes are there for me", [], 0, "find_schemes"),
     ("I am a farmer", [], 1, "find_schemes"),
     ("what is the capital of France", [], 0, "general"),
+    ("Is there any scheme for artisans like carpenters?", [], 0, "general"),
+    ("which schemes can I get", [], 0, "find_schemes"),
 ])
 def test_intent(text, mentions, n, intent):
     assert classify(text, mentions, n) == intent
