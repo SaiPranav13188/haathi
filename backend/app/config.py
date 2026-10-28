@@ -33,7 +33,8 @@ class Settings(BaseSettings):
     # "auto" uses BGE-M3 when FlagEmbedding is installed, otherwise the light hashing embedder.
     embedder: Literal["auto", "bge-m3", "hash"] = "auto"
     reranker: Literal["auto", "bge", "lexical"] = "auto"
-    vector_store: Literal["qdrant-memory", "qdrant-server"] = "qdrant-memory"
+    # "numpy" = compact in-process store for small servers (e.g. 512 MB free tiers); same scores as Qdrant
+    vector_store: Literal["qdrant-memory", "qdrant-server", "numpy"] = "qdrant-memory"
     qdrant_url: str = "http://localhost:6333"
 
     # Abstention threshold on the (normalised) top rerank score; tuned via eval/risk_coverage.py

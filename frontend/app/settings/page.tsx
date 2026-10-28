@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Trash2 } from "lucide-react";
 import { useApp } from "@/lib/app-context";
 import type { AnimLevel } from "@/lib/types";
@@ -22,6 +22,8 @@ function Row({ label, hint, children }: { label: string; hint?: string; children
 export default function Settings() {
   const { t, anim, setAnim, theme, setTheme, textSize, setTextSize, clearData, toast, profile, reducedMotion, lang } = useApp();
   const [confirm, setConfirm] = useState(false);
+  const [recorder, setRecorder] = useState(false); // dev-only tool; the production backend refuses it
+  useEffect(() => { fetch("/api/asr-clips").then((r) => setRecorder(r.ok)).catch(() => {}); }, []);
   return (
     <motion.div variants={pageIn} initial="hidden" animate="show" className="mx-auto max-w-2xl px-4 pb-12 pt-4">
       <div className="flex items-center gap-3"><Gajju state={anim === "off" ? "idle" : "wave"} size={72} /><h1 className="text-2xl font-extrabold">{t("settings")}</h1></div>
@@ -40,11 +42,11 @@ export default function Settings() {
         </Row>
       </div>
 
-      <a href="/record" className="mt-5 flex items-center gap-3 rounded-3xl border border-line bg-surface p-5 shadow-card hover:bg-surface-2">
+      {recorder && <a href="/record" className="mt-5 flex items-center gap-3 rounded-3xl border border-line bg-surface p-5 shadow-card hover:bg-surface-2">
         <span className="text-2xl" aria-hidden>🎙️</span>
         <span className="flex-1"><b className="block">Speech test recorder</b><span className="text-sm text-ink-3">Read 20 sentences per language to measure voice accuracy</span></span>
         <span aria-hidden>→</span>
-      </a>
+      </a>}
 
       <div className="mt-5 rounded-3xl border border-line bg-surface p-5 shadow-card">
         <p className="font-semibold">{t("yourProfile")}</p>

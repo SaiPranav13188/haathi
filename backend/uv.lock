@@ -999,6 +999,7 @@ dependencies = [
     { name = "python-multipart" },
     { name = "qdrant-client" },
     { name = "rapidfuzz" },
+    { name = "scipy" },
     { name = "truststore" },
     { name = "uvicorn", extra = ["standard"] },
 ]
@@ -1043,6 +1044,7 @@ requires-dist = [
     { name = "python-multipart", specifier = ">=0.0.9" },
     { name = "qdrant-client", specifier = ">=1.12" },
     { name = "rapidfuzz", specifier = ">=3.9" },
+    { name = "scipy", specifier = ">=1.13" },
     { name = "torch", marker = "extra == 'ml'", specifier = ">=2.4" },
     { name = "transformers", marker = "extra == 'ml'", specifier = ">=4.44,<5" },
     { name = "truststore", specifier = ">=0.10.5" },

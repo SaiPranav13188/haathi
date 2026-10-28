@@ -116,3 +116,21 @@ def test_live_dictation_without_key_reports_error(client):
     # tests run without a Gemini key: the socket must say so instead of hanging
     with client.websocket_connect("/api/asr/live") as ws:
         assert ws.receive_json() == {"type": "error", "reason": "no-llm"}
+
+
+def test_numpy_store_matches_qdrant():
+    """The compact store for small servers must rank exactly like Qdrant."""
+    from app.config import get_settings
+    from app.corpus import get_corpus
+    from app.retrieval.pipeline import Retriever
+
+    chunks = get_corpus().chunks
+    s = get_settings()
+    a = Retriever(chunks, s, vector_store="qdrant-memory")
+    b = Retriever(chunks, s, vector_store="numpy")
+    for q in ["రైతు భరోసా ఎంత", "documents for Kalyana Lakshmi", "pension for elderly"]:
+        assert a._dense(q, 10) == b._dense(q, 10)
+        # sparse scores are identical; only passages with exactly tied scores may swap places at the cut-off
+        assert a._sparse(q, 10)[0] == b._sparse(q, 10)[0]
+        x, y = a._sparse(q, 10), b._sparse(q, 10)
+        assert len(x) == len(y) and len(set(x) & set(y)) >= min(8, len(x))

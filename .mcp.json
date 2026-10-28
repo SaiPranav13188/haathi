@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+    },
+    "huggingface": {
+      "type": "http",
+      "url": "https://huggingface.co/mcp?login"
+    }
+  }
+}

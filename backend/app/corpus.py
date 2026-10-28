@@ -72,7 +72,8 @@ class Corpus:
         raw_schemes = [json.loads(p.read_text(encoding="utf-8")) for p in sorted((s.data_dir / "schemes").glob("*.json"))]
         raw_schemes = [r for r in raw_schemes if r.get("review_status") != "rejected"]
         for r in raw_schemes:
-            for doc_id in {r["doc"], *(src["doc"] for src in self._sources(r)), *(o["doc"] for o in r.get("official_sources", []))}:
+            # deterministic order (a set's order changes between runs, which would change the embedding cache key)
+            for doc_id in dict.fromkeys([r["doc"], *(src["doc"] for src in self._sources(r)), *(o["doc"] for o in r.get("official_sources", []))]):
                 if doc_id not in self.docs:
                     self.docs[doc_id] = self._load_doc(doc_id, parsed_dir)
         self._doc_owner: dict[str, str] = {}

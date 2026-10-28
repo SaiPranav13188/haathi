@@ -5,6 +5,14 @@ government schemes you're likely eligible for. It proves each one with the exact
 guidelines and tells you which documents to bring and how to apply. It covers central, **Telangana** and
 Andhra Pradesh schemes. It's a phone-first web app (PWA) and runs at ₹0.
 
+### 🔗 Live demo: **[haathi-ten.vercel.app](https://haathi-ten.vercel.app)**
+
+Open it on your phone and try *"నేను తెలంగాణలో రైతుని, 2 ఎకరాల భూమి ఉంది"*, or tap Gajju's ear and speak.
+The demo runs on free hosting, so the first visit after a quiet spell can take about a minute while the server wakes up
+(a banner tells you). To fit the free 512 MB server it uses the **light engine** (hashing embedder + lexical reranker)
+with Gemini. The full-model numbers below come from running Haathi locally; the live site's numbers are in
+[`eval/reports/live_light_engine.md`](eval/reports/live_light_engine.md).
+
 > ⚠️ Haathi is not a government service and is not affiliated with any government. Always confirm on the
 > official portal before you apply.
 
@@ -214,8 +222,10 @@ eval/               schemeqa/ (benchmark + datasheet), run_eval, ablations, risk
   benchmark take several days of quota. The ASR WER comparison needs recorded clips.
 - **Gajju is an animated SVG, not a Rive file.** It's the placeholder that Prompt 7 allows, with the same
   state-machine API, so a `gajju.riv` can drop in later.
-- **Not deployed yet.** For Vercel (frontend, set `BACKEND_URL`) and Render or HF Spaces (backend Dockerfile
-  included), keep keys only in backend env vars.
+- **Deployed on free tiers.** The website runs on Vercel (`frontend/`, `BACKEND_URL` + `NEXT_PUBLIC_BACKEND_WS`).
+  The backend runs on Render's free plan from a private deploy bundle (`deploy/deploy_render.py`, light engine,
+  about 255 MB). Hugging Face no longer offers free Docker Spaces; `deploy/deploy_hf_space.py` deploys the full
+  models there on a PRO account. The Gemini key lives only in the backend's environment.
 
 ## Compared with existing systems
 

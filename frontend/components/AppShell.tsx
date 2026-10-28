@@ -105,6 +105,47 @@ function SquirrelFlight() {
   );
 }
 
+/** Free hosting puts the backend to sleep when idle; tell people it is waking up instead of looking broken. */
+function ServerBanner() {
+  const { lang } = useApp();
+  const [state, setState] = useState<"ok" | "waking" | "down">("ok");
+  useEffect(() => {
+    let alive = true, tries = 0;
+    const ping = async () => {
+      try {
+        const r = await fetch("/api/health", { cache: "no-store", signal: AbortSignal.timeout(6000) });
+        if (!alive) return;
+        if (r.ok) { setState("ok"); return; }
+        throw new Error();
+      } catch {
+        if (!alive) return;
+        tries++;
+        setState(tries > 30 ? "down" : "waking");
+        setTimeout(ping, 5000);
+      }
+    };
+    ping();
+    return () => { alive = false; };
+  }, []);
+  const text = {
+    waking: { en: "Haathi's server is waking up (free hosting). This can take a minute…", hi: "हाथी का सर्वर जाग रहा है (मुफ़्त होस्टिंग)। एक मिनट लग सकता है…", te: "హాథీ సర్వర్ మేల్కొంటోంది (ఉచిత హోస్టింగ్). ఒక నిమిషం పట్టవచ్చు…" },
+    down: { en: "Haathi's server isn't responding right now. Please try again later.", hi: "हाथी का सर्वर अभी जवाब नहीं दे रहा। कृपया बाद में कोशिश करें।", te: "హాథీ సర్వర్ ఇప్పుడు స్పందించడం లేదు. దయచేసి తర్వాత ప్రయత్నించండి." },
+  } as const;
+  return (
+    <AnimatePresence>
+      {state !== "ok" && (
+        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+          className="overflow-hidden bg-amber-soft text-[#7a4a00] dark:text-marigold" role="status">
+          <div className="mx-auto flex max-w-6xl items-center gap-2 px-4 py-2.5 text-sm font-medium">
+            <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" aria-hidden />
+            {text[state][lang]}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 function OfflineBanner() {
   const { online, t } = useApp();
   return (
@@ -205,6 +246,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
       <Splash />
       <TopBar />
       <OfflineBanner />
+      <ServerBanner />
       <div className="mx-auto flex max-w-6xl">
         <nav aria-label="Main" className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-56 shrink-0 flex-col gap-1 p-4 lg:flex">
           <NavItems vertical />

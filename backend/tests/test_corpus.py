@@ -31,3 +31,16 @@ def test_mentions_and_renamed():
     hits = dict(c.find_mentions("Is Rythu Bandhu still there?"))
     assert "ts_rythu_bharosa" in hits and hits["ts_rythu_bharosa"] == "rythu bandhu"
     assert "pm_kisan" in dict(c.find_mentions("పీఎం-కిసాన్ ఎంత వస్తుంది"))
+
+
+def test_chunk_order_is_deterministic_across_processes():
+    """The embedding cache key depends on chunk order; it must not change with Python's hash seed."""
+    import os
+    import subprocess
+    import sys
+
+    code = ("import hashlib; from app.corpus import Corpus; "
+            "print(hashlib.sha1('|'.join(c.id for c in Corpus().chunks).encode()).hexdigest())")
+    keys = {subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True,
+                           env={**os.environ, "PYTHONHASHSEED": seed}).stdout.strip() for seed in ("1", "2", "3")}
+    assert len(keys) == 1

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: haathi-api
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false   # Render asks for the value when you create the Blueprint

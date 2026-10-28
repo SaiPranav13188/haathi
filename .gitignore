@@ -25,3 +25,4 @@ node_modules/
 *.tsbuildinfo
 # voice recordings stay on this machine
 eval/asr_clips/
+deploy/.build/

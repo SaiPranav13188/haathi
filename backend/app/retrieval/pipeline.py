@@ -65,6 +65,21 @@ class Retriever:
 
     def _build_vectors(self) -> None:
         dense, sparse = self._emb_cache()
+        self.q = None
+        if self.s.vector_store == "numpy":
+            # dense: one float32 matrix (rows are unit vectors, so dot product = cosine)
+            self.np_dense = np.ascontiguousarray(dense, dtype=np.float32)
+            # sparse: CSR matrix over the hashed term ids
+            from scipy.sparse import csr_matrix
+
+            vocab: dict[int, int] = {}
+            rows, cols, vals = [], [], []
+            for i, sp in enumerate(sparse):
+                for k, v in sp.items():
+                    rows.append(i); cols.append(vocab.setdefault(int(k), len(vocab))); vals.append(v)
+            self.np_vocab = vocab
+            self.np_sparse = csr_matrix((np.asarray(vals, np.float32), (rows, cols)), shape=(len(sparse), max(len(vocab), 1)))
+            return
         if self.s.vector_store == "qdrant-server":
             self.q = QdrantClient(url=self.s.qdrant_url)
         else:
@@ -87,6 +102,10 @@ class Retriever:
     # ------------------------------------------------------------------ search
     def _dense(self, query: str, k: int) -> list[str]:
         d, _ = self.embedder.encode([query])
+        if self.q is None:
+            scores = self.np_dense @ np.asarray(d[0], np.float32)
+            top = np.argsort(-scores)[:k]
+            return [self.chunks[int(i)].id for i in top]
         res = self.q.query_points(COLLECTION, query=d[0].tolist(), using="dense", limit=k).points
         return [p.payload["cid"] for p in res]
 
@@ -94,6 +113,16 @@ class Retriever:
         _, sp = self.embedder.encode([query])
         if not sp[0]:
             return []
+        if self.q is None:
+            idx = [(self.np_vocab[int(t)], w) for t, w in sp[0].items() if int(t) in self.np_vocab]
+            if not idx:
+                return []
+            qv = np.zeros(self.np_sparse.shape[1], np.float32)
+            for j, w in idx:
+                qv[j] = w
+            scores = self.np_sparse @ qv
+            top = [int(i) for i in np.argsort(-scores)[:k] if scores[i] > 0]
+            return [self.chunks[i].id for i in top]
         res = self.q.query_points(COLLECTION, query=models.SparseVector(indices=list(sp[0].keys()), values=list(sp[0].values())),
                                   using="sparse", limit=k).points
         return [p.payload["cid"] for p in res]
