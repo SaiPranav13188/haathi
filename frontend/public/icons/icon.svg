@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Haathi master icon: Gajju's head (front), ears spread, trunk curled up saying hello. No government symbols. -->
+  <rect width="512" height="512" rx="116" fill="#0b6e84"/>
+  <g fill="#ffffff">
+    <!-- ears -->
+    <path d="M186 168 C 112 120, 40 178, 60 268 C 74 330, 140 352, 196 314 Z"/>
+    <path d="M326 168 C 400 120, 472 178, 452 268 C 438 330, 372 352, 316 314 Z"/>
+    <!-- head -->
+    <circle cx="256" cy="236" r="112"/>
+    <!-- trunk curling up -->
+    <path d="M228 300 C 224 352, 232 392, 262 410 C 300 432, 348 414, 356 372 C 362 340, 336 322, 316 336 C 302 346, 308 366, 322 366 C 318 382, 292 388, 278 372 C 266 356, 270 328, 272 300 Z"/>
+  </g>
+  <!-- inner ears -->
+  <path d="M176 190 C 124 160, 82 204, 96 262 C 106 300, 146 314, 180 294 Z" fill="#d7ecef"/>
+  <path d="M336 190 C 388 160, 430 204, 416 262 C 406 300, 366 314, 332 294 Z" fill="#d7ecef"/>
+  <!-- eyes -->
+  <circle cx="218" cy="226" r="17" fill="#0b2a33"/>
+  <circle cx="294" cy="226" r="17" fill="#0b2a33"/>
+  <circle cx="224" cy="219" r="5.5" fill="#ffffff"/>
+  <circle cx="300" cy="219" r="5.5" fill="#ffffff"/>
+  <!-- marigold dot near the trunk -->
+  <circle cx="392" cy="352" r="26" fill="#f4a51c"/>
+</svg>

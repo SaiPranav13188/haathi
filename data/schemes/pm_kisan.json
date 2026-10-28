@@ -1,0 +1,120 @@
+{
+  "scheme_id": "pm_kisan",
+  "version": "2024-06",
+  "doc": "pm_kisan.md",
+  "name": {
+    "en": "PM-KISAN",
+    "hi": "पीएम-किसान",
+    "te": "పీఎం-కిసాన్"
+  },
+  "tagline": {
+    "en": "₹6,000 a year income support for farmers",
+    "hi": "किसानों को सालाना ₹6,000 आय सहायता",
+    "te": "రైతులకు ఏటా ₹6,000 ఆదాయ సాయం"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "farmers"
+  ],
+  "official_url": "https://pmkisan.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "farmer"
+      ],
+      "source": {
+        "doc": "pm_kisan.md",
+        "page": 1,
+        "quote": "All landholding farmer families, who have cultivable land in their names, are eligible for the benefit."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "land_acres",
+      "op": "gt",
+      "value": 0,
+      "source": {
+        "doc": "pm_kisan.md",
+        "page": 1,
+        "quote": "All landholding farmer families, who have cultivable land in their names, are eligible for the benefit."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "has_bank_account",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "pm_kisan.md",
+        "page": 1,
+        "quote": "The bank account of the farmer must be seeded with Aadhaar, and e-KYC must be completed."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "is_income_tax_payer",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pm_kisan.md",
+        "page": 1,
+        "quote": "Families in which any member paid income tax in the last assessment year are excluded."
+      }
+    },
+    {
+      "id": "r5",
+      "field": "is_govt_employee",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pm_kisan.md",
+        "page": 1,
+        "quote": "serving or retired government employees (except Group D / MTS)"
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4 AND r5",
+  "benefit": {
+    "summary": {
+      "en": "₹6,000 per year in 3 instalments of ₹2,000",
+      "hi": "₹2,000 की 3 किस्तों में ₹6,000 प्रति वर्ष",
+      "te": "₹2,000 చొప్పున 3 విడతల్లో ఏటా ₹6,000"
+    },
+    "amount": 6000,
+    "unit": {
+      "en": "per year",
+      "hi": "प्रति वर्ष",
+      "te": "ఏటా"
+    },
+    "source": {
+      "doc": "pm_kisan.md",
+      "page": 2,
+      "quote": "Income support of ₹6,000 per year is paid in three equal instalments of ₹2,000 every four months"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "land_record",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Register on the PM-KISAN portal (Farmers Corner) or at a CSC, then complete e-KYC.",
+      "hi": "पीएम-किसान पोर्टल (फार्मर्स कॉर्नर) या CSC पर पंजीकरण करें, फिर e-KYC पूरा करें।",
+      "te": "పీఎం-కిసాన్ పోర్టల్ (ఫార్మర్స్ కార్నర్) లేదా CSCలో నమోదు చేసి, e-KYC పూర్తి చేయండి."
+    },
+    "source": {
+      "doc": "pm_kisan.md",
+      "page": 2,
+      "quote": "Register through the Farmers Corner on the PM-KISAN portal, at a Common Service Centre (CSC), or with the local revenue officer."
+    }
+  }
+}

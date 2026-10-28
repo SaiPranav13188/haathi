@@ -1,0 +1,183 @@
+{
+  "scheme_id": "ts_epass_post_matric",
+  "version": "2024-06",
+  "doc": "ts_epass_post_matric.md",
+  "name": {
+    "en": "ePASS Post-Matric Scholarship",
+    "hi": "ePASS पोस्ट-मैट्रिक छात्रवृत्ति",
+    "te": "ePASS పోస్ట్ మెట్రిక్ స్కాలర్‌షిప్"
+  },
+  "tagline": {
+    "en": "Fee reimbursement for Inter, degree & PG students",
+    "hi": "इंटर, डिग्री और पीजी छात्रों के लिए फीस प्रतिपूर्ति",
+    "te": "ఇంటర్, డిగ్రీ, పీజీ విద్యార్థులకు ఫీజు రీయింబర్స్‌మెంట్"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "students"
+  ],
+  "official_url": "https://telanganaepass.cgg.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": "2022-09-29",
+  "change_note": {
+    "en": "G.O.Ms.No.18: minority students in rural areas now have the same ₹2 lakh income limit as SC/ST students.",
+    "hi": "G.O.Ms.No.18: ग्रामीण क्षेत्रों के अल्पसंख्यक छात्रों की आय सीमा अब SC/ST की तरह ₹2 लाख है।",
+    "te": "G.O.Ms.No.18: గ్రామీణ ప్రాంతాల మైనారిటీ విద్యార్థులకు ఇప్పుడు SC/ST లాగే ₹2 లక్షల ఆదాయ పరిమితి."
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_epass_post_matric.md",
+        "page": 1,
+        "quote": "The student must be a resident of Telangana studying in Intermediate (Class 11) or a higher course."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "education_level",
+      "op": "in",
+      "value": [
+        "class_11_12",
+        "college"
+      ],
+      "source": {
+        "doc": "ts_epass_post_matric.md",
+        "page": 1,
+        "quote": "The student must be a resident of Telangana studying in Intermediate (Class 11) or a higher course."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "category",
+      "op": "in",
+      "value": [
+        "sc",
+        "st",
+        "minority"
+      ],
+      "source": {
+        "doc": "ts_epass_post_matric.pdf",
+        "page": 1,
+        "quote": "Enhancement of annual ceiling on family income from Rs.1.50 lakhs to Rs.2.00 lakhs to the Minority students in Rural areas on par with Scheduled Castes and Scheduled Tribes students for claiming the Post Matric Scholarships"
+      }
+    },
+    {
+      "id": "r4",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 200000,
+      "source": {
+        "doc": "ts_epass_post_matric.pdf",
+        "page": 1,
+        "quote": "Enhancement of annual ceiling on family income from Rs.1.50 lakhs to Rs.2.00 lakhs to the Minority students in Rural areas on par with Scheduled Castes and Scheduled Tribes students for claiming the Post Matric Scholarships"
+      }
+    },
+    {
+      "id": "r5",
+      "field": "category",
+      "op": "in",
+      "value": [
+        "bc",
+        "ebc"
+      ],
+      "source": {
+        "doc": "ts_epass_post_matric.md",
+        "page": 1,
+        "quote": "Students from Backward Class or Economically Backward Class families are eligible if the parents' annual income does not exceed ₹1,50,000 in rural areas."
+      }
+    },
+    {
+      "id": "r6",
+      "field": "area",
+      "op": "eq",
+      "value": "rural",
+      "source": {
+        "doc": "ts_epass_post_matric.md",
+        "page": 1,
+        "quote": "the parents' annual income does not exceed ₹1,50,000 in rural areas."
+      }
+    },
+    {
+      "id": "r7",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 150000,
+      "source": {
+        "doc": "ts_epass_post_matric.md",
+        "page": 1,
+        "quote": "the parents' annual income does not exceed ₹1,50,000 in rural areas."
+      }
+    },
+    {
+      "id": "r8",
+      "field": "area",
+      "op": "eq",
+      "value": "urban",
+      "source": {
+        "doc": "ts_epass_post_matric.md",
+        "page": 1,
+        "quote": "For Backward Class or Economically Backward Class families in urban areas, the parents' annual income should not exceed ₹2,00,000."
+      }
+    },
+    {
+      "id": "r9",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 200000,
+      "source": {
+        "doc": "ts_epass_post_matric.md",
+        "page": 1,
+        "quote": "For Backward Class or Economically Backward Class families in urban areas, the parents' annual income should not exceed ₹2,00,000."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND ((r3 AND r4) OR (r5 AND ((r6 AND r7) OR (r8 AND r9))))",
+  "benefit": {
+    "summary": {
+      "en": "Tuition fee paid to college + maintenance allowance",
+      "hi": "कॉलेज को ट्यूशन फीस + रखरखाव भत्ता",
+      "te": "కాలేజీకి ట్యూషన్ ఫీజు + మెయింటెనెన్స్ భత్యం"
+    },
+    "amount": null,
+    "unit": null,
+    "source": {
+      "doc": "ts_epass_post_matric.md",
+      "page": 2,
+      "quote": "Reimbursement of tuition fee (RTF) paid directly to the college, and a maintenance fee (MTF) paid to the student's bank account."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "caste_certificate",
+    "income_certificate",
+    "marks_memo",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Register on Telangana ePASS every academic year and do biometric verification at your college.",
+      "hi": "हर शैक्षणिक वर्ष तेलंगाना ePASS पर पंजीकरण करें और कॉलेज में बायोमेट्रिक सत्यापन कराएँ।",
+      "te": "ప్రతి విద్యా సంవత్సరం తెలంగాణ ePASSలో నమోదు చేసి, కాలేజీలో బయోమెట్రిక్ ధృవీకరణ చేయించండి."
+    },
+    "source": {
+      "doc": "ts_epass_post_matric.md",
+      "page": 2,
+      "quote": "Register on the Telangana ePASS portal every academic year"
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "ts_epass_post_matric.pdf",
+      "url": "https://goir.telangana.gov.in",
+      "label": "G.O.Ms.No.18 (SW), 29/09/2022",
+      "downloaded": "2026-10-28",
+      "sha256": "34f011d856706856f116348e58be0fe198ba543b4805cf3c87b0153b4ca838b3"
+    }
+  ]
+}

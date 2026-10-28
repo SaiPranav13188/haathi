@@ -1,0 +1,114 @@
+{
+  "scheme_id": "pm_sym_extracted",
+  "version": "extracted",
+  "doc": "pm_sym.pdf",
+  "name": {
+    "en": "PM Shram Yogi Maan-dhan"
+  },
+  "tagline": {
+    "en": "Minimum Assured Pension of ₹3,000 per month after 60 years of age."
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "workers"
+  ],
+  "official_url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/mar/doc202534512301.pdf",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        40
+      ],
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 2,
+        "quote": "Age Requirement: 18 to 40 years."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 180000,
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 2,
+        "quote": "Income Limit: Monthly income should be ₹15,000 or less."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "unorganised_worker",
+        "artisan",
+        "self_employed"
+      ],
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 2,
+        "quote": "Workers engaged in professions such as: o Street vendors, rag pickers, rickshaw pullers o Construction workers, daily wage labourers o Agricultural workers, beedi workers o Domestic workers, weavers, artisans, fishermen, leather workers, etc."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "has_epf_esic_nps",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 3,
+        "quote": "Should not be covered under the Employees' Provident Fund (EPF), Employees' State Insurance Corporation (ESIC), or National Pension Scheme (NPS)."
+      }
+    },
+    {
+      "id": "r5",
+      "field": "is_income_tax_payer",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 3,
+        "quote": "Should not be an income taxpayer."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4 AND r5",
+  "benefit": {
+    "summary": {
+      "en": "Minimum Assured Pension of ₹3,000 per month after 60 years of age."
+    },
+    "amount": 36000,
+    "source": {
+      "doc": "pm_sym.pdf",
+      "page": 2,
+      "quote": "Minimum Assured Pension: ₹3,000 per month after 60 years of age."
+    }
+  },
+  "documents_required": [
+    "Aadhaar Card",
+    "Savings bank account or Jan Dhan account details with IFSC",
+    "Mobile number"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Eligible workers can register at Common Service Centres (CSCs) or through the Maandhan portal with Aadhaar and a savings bank account."
+    },
+    "source": {
+      "doc": "pm_sym.pdf",
+      "page": 2,
+      "quote": "Eligible workers can register at Common Service Centres (CSCs) or through the Maandhan portal."
+    }
+  },
+  "extraction": {
+    "rules_kept": 5,
+    "rules_rejected_no_quote": 0
+  }
+}

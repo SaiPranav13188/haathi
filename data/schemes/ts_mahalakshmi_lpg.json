@@ -1,0 +1,107 @@
+{
+  "scheme_id": "ts_mahalakshmi_lpg",
+  "version": "2024-02",
+  "doc": "ts_mahalakshmi_lpg.md",
+  "name": {
+    "en": "Mahalakshmi ₹500 Gas Cylinder",
+    "hi": "महालक्ष्मी ₹500 गैस सिलेंडर",
+    "te": "మహాలక్ష్మి ₹500 గ్యాస్ సిలిండర్"
+  },
+  "tagline": {
+    "en": "Domestic LPG cylinder at ₹500",
+    "hi": "₹500 में घरेलू एलपीजी सिलेंडर",
+    "te": "₹500కే గృహ వినియోగ LPG సిలిండర్"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "women",
+    "households"
+  ],
+  "official_url": "https://www.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_mahalakshmi_lpg.pdf",
+        "page": 1,
+        "quote": "They should be White Ration Card (FSC) holders in Telangana."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_mahalakshmi_lpg.pdf",
+        "page": 1,
+        "quote": "They should be White Ration Card (FSC) holders in Telangana."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "has_lpg_connection",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_mahalakshmi_lpg.pdf",
+        "page": 1,
+        "quote": "They should have active domestic LPG connection in their name."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "Pay ₹500 per cylinder; the rest is refunded to your bank",
+      "hi": "प्रति सिलेंडर ₹500; बाकी बैंक में वापस",
+      "te": "సిలిండర్‌కు ₹500; మిగతాది బ్యాంకులో జమ"
+    },
+    "amount": 500,
+    "unit": {
+      "en": "per cylinder",
+      "hi": "प्रति सिलेंडर",
+      "te": "సిలిండర్‌కు"
+    },
+    "source": {
+      "doc": "ts_mahalakshmi_lpg.pdf",
+      "page": 1,
+      "quote": "Supply of LPG Domestic Cylinder at a subsidized rate of Rs.500/- per refill"
+    }
+  },
+  "documents_required": [
+    "ration_card",
+    "aadhaar",
+    "lpg_number",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Submit Praja Palana; link LPG consumer number, Aadhaar and bank account at your gas agency.",
+      "hi": "प्रजा पालना दें; गैस एजेंसी पर एलपीजी नंबर, आधार और बैंक खाता जोड़ें।",
+      "te": "ప్రజా పాలన దరఖాస్తు ఇచ్చి; గ్యాస్ ఏజెన్సీలో LPG నంబర్, ఆధార్, బ్యాంక్ ఖాతాను లింక్ చేయండి."
+    },
+    "source": {
+      "doc": "ts_mahalakshmi_lpg.md",
+      "page": 2,
+      "quote": "Submit the Praja Palana application and link your LPG consumer number, Aadhaar and bank account at your gas agency."
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "ts_mahalakshmi_lpg.pdf",
+      "url": "https://goir.telangana.gov.in",
+      "label": "G.O.Ms.No.2 (FCS), 27/02/2024",
+      "downloaded": "2026-10-28",
+      "sha256": "d8b14eed5d4896b90f3ee746d18f24ebc6caeb6ec2fb252e49451f04aab72e36"
+    }
+  ]
+}

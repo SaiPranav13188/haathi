@@ -1,0 +1,98 @@
+{
+  "scheme_id": "ap_thalliki_vandanam",
+  "version": "2025-06",
+  "doc": "ap_thalliki_vandanam.md",
+  "name": {
+    "en": "Thalliki Vandanam",
+    "hi": "तल्लिकी वंदनम",
+    "te": "తల్లికి వందనం"
+  },
+  "tagline": {
+    "en": "₹15,000 a year for every school-going child",
+    "hi": "हर स्कूली बच्चे के लिए सालाना ₹15,000",
+    "te": "బడికి వెళ్లే ప్రతి బిడ్డకు ఏటా ₹15,000"
+  },
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "categories": [
+    "students",
+    "women"
+  ],
+  "official_url": "https://gsws-nbm.ap.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Andhra Pradesh",
+      "source": {
+        "doc": "ap_thalliki_vandanam.md",
+        "page": 1,
+        "quote": "The mother or guardian must reside in Andhra Pradesh and have a child studying in Class 1 to Class 12."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_school_child",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ap_thalliki_vandanam.md",
+        "page": 1,
+        "quote": "The mother or guardian must reside in Andhra Pradesh and have a child studying in Class 1 to Class 12."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ap_thalliki_vandanam.md",
+        "page": 1,
+        "quote": "The family must hold a white rice card."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "₹15,000 per child per year to the mother",
+      "hi": "माँ को प्रति बच्चा प्रति वर्ष ₹15,000",
+      "te": "తల్లికి ఒక్కో బిడ్డకు ఏటా ₹15,000"
+    },
+    "amount": 15000,
+    "unit": {
+      "en": "per child / year",
+      "hi": "प्रति बच्चा / वर्ष",
+      "te": "బిడ్డకు / ఏటా"
+    },
+    "source": {
+      "doc": "ap_thalliki_vandanam.md",
+      "page": 2,
+      "quote": "Financial assistance of ₹15,000 per year for each school-going child"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "ration_card",
+    "study_certificate",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Identified from school records; contact your Village / Ward Secretariat if missing.",
+      "hi": "स्कूल रिकॉर्ड से चयन; नाम न हो तो ग्राम / वार्ड सचिवालय से संपर्क करें।",
+      "te": "పాఠశాల రికార్డుల ద్వారా ఎంపిక; పేరు లేకపోతే గ్రామ / వార్డు సచివాలయాన్ని సంప్రదించండి."
+    },
+    "source": {
+      "doc": "ap_thalliki_vandanam.md",
+      "page": 2,
+      "quote": "Contact your Village / Ward Secretariat if your name is missing."
+    }
+  }
+}

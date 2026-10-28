@@ -1,0 +1,98 @@
+{
+  "scheme_id": "ap_annadata_sukhibhava",
+  "version": "2025-08",
+  "doc": "ap_annadata_sukhibhava.md",
+  "name": {
+    "en": "Annadata Sukhibhava",
+    "hi": "अन्नदाता सुखीभव",
+    "te": "అన్నదాత సుఖీభవ"
+  },
+  "tagline": {
+    "en": "₹20,000 a year for AP farmer families",
+    "hi": "आंध्र प्रदेश के किसान परिवारों को सालाना ₹20,000",
+    "te": "ఏపీ రైతు కుటుంబాలకు ఏటా ₹20,000"
+  },
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "categories": [
+    "farmers"
+  ],
+  "official_url": "https://annadathasukhibhava.ap.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "farmer"
+      ],
+      "source": {
+        "doc": "ap_annadata_sukhibhava.md",
+        "page": 1,
+        "quote": "Farmer families who own cultivable agricultural land in Andhra Pradesh are eligible."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "state",
+      "op": "eq",
+      "value": "Andhra Pradesh",
+      "source": {
+        "doc": "ap_annadata_sukhibhava.md",
+        "page": 1,
+        "quote": "Farmer families who own cultivable agricultural land in Andhra Pradesh are eligible."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "is_income_tax_payer",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "ap_annadata_sukhibhava.md",
+        "page": 1,
+        "quote": "Families in which any member is an income tax payer are excluded."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "₹20,000 per year (incl. ₹6,000 PM-KISAN)",
+      "hi": "₹20,000 प्रति वर्ष (₹6,000 पीएम-किसान सहित)",
+      "te": "ఏటా ₹20,000 (₹6,000 పీఎం-కిసాన్‌తో కలిపి)"
+    },
+    "amount": 20000,
+    "unit": {
+      "en": "per year",
+      "hi": "प्रति वर्ष",
+      "te": "ఏటా"
+    },
+    "source": {
+      "doc": "ap_annadata_sukhibhava.md",
+      "page": 2,
+      "quote": "Financial assistance of ₹20,000 per year per farmer family, including ₹6,000 from PM-KISAN"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "land_record",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Register at your village Rythu Seva Kendram with e-KYC.",
+      "hi": "गाँव के रैतु सेवा केंद्र पर e-KYC के साथ पंजीकरण करें।",
+      "te": "మీ గ్రామ రైతు సేవా కేంద్రంలో e-KYCతో నమోదు చేయండి."
+    },
+    "source": {
+      "doc": "ap_annadata_sukhibhava.md",
+      "page": 2,
+      "quote": "Registration is done through the Rythu Seva Kendram (RSK) in your village with e-KYC."
+    }
+  }
+}

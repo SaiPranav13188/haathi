@@ -1,0 +1,74 @@
+{
+  "scheme_id": "post_matric_sc_extracted",
+  "version": "extracted",
+  "doc": "post_matric_sc.pdf",
+  "name": {
+    "en": "Post-Matric Scholarship SC"
+  },
+  "tagline": {
+    "en": "Post Matric Scholarships to the students belonging to Scheduled Castes for studies in India, covering compulsory non-refundable fees and academic allowance."
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "students"
+  ],
+  "official_url": "https://socialwelfare.goa.gov.in/wp-content/uploads/2024/07/Guidelines-to-post-matric-scholaships-to-the-students-belonging-to-scheduled-castes-for-students-in-India-2020-2021-to-2025-26_0001.pdf",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "category",
+      "op": "eq",
+      "value": "sc",
+      "source": {
+        "doc": "post_matric_sc.pdf",
+        "page": 5,
+        "quote": "The scholarships are open to Nationals of India only. Sa s o e g g o ag o sto the State/Union Territory to which the applicant actually belongs /domiciled as determined by the State/UT and who have passed the Matriculation or Higher Secondary or any higher ea i ily i oy e o bile. Sc s s d s s d s l al sources does not exceed Rs. 2,50,000/-(Rupees Two lakh Fifty thousand only) during the last Financial Year."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 250000,
+      "source": {
+        "doc": "post_matric_sc.pdf",
+        "page": 5,
+        "quote": "does not exceed Rs. 2,50,000/-(Rupees Two lakh Fifty thousand only) during the last Financial Year."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "Post Matric Scholarships to the students belonging to Scheduled Castes for studies in India, covering compulsory non-refundable fees and academic allowance."
+    },
+    "amount": null,
+    "source": {
+      "doc": "post_matric_sc.pdf",
+      "page": 8,
+      "quote": "The scholarship includes the following components for the complete duration of the course:- Compulsory non-refundable fees including tuition fee, as fixed by the Fee Fixation/Rationalization Committee of the State Government Academic allowance"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "caste_certificate",
+    "income_certificate"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Register on the respective scholarship portal for issuance of a Freeship Card, and apply for the scholarship on the day of admission into the institution."
+    },
+    "source": {
+      "doc": "post_matric_sc.pdf",
+      "page": 9,
+      "quote": "The student shall, well before the expected date of admission, register for issuance of a Freeship Card on the respective scholarship portal giving the details like the Aadhaar number, the name of the course in which he/she wants'to take admission"
+    }
+  },
+  "extraction": {
+    "rules_kept": 2,
+    "rules_rejected_no_quote": 0
+  }
+}

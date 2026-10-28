@@ -1,0 +1,27 @@
+# secrets
+.env
+backend/.env
+# downloaded documents and build artefacts (manifests are committed)
+data/raw/*
+!data/raw/.gitkeep
+data/index/
+data/cache/
+data/qdrant/
+data/langfuse-db/
+data/versions/
+data/feedback.jsonl
+data/review_log.jsonl
+data/*.log
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+.hypothesis/
+# node
+node_modules/
+.next/
+*.tsbuildinfo
+# voice recordings stay on this machine
+eval/asr_clips/

@@ -1,0 +1,83 @@
+{
+  "scheme_id": "pmfby",
+  "version": "2024-04",
+  "doc": "pmfby.md",
+  "name": {
+    "en": "PM Fasal Bima Yojana",
+    "hi": "प्रधानमंत्री फसल बीमा योजना",
+    "te": "ప్రధానమంత్రి ఫసల్ బీమా యోజన"
+  },
+  "tagline": {
+    "en": "Low-premium crop insurance",
+    "hi": "कम प्रीमियम पर फसल बीमा",
+    "te": "తక్కువ ప్రీమియంతో పంట బీమా"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "farmers",
+    "insurance"
+  ],
+  "official_url": "https://pmfby.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "farmer"
+      ],
+      "source": {
+        "doc": "pmfby.pdf",
+        "page": 13,
+        "quote": "All farmers including sharecroppers and tenant farmers growing the notified crops in the notified areas are eligible for coverage."
+      }
+    }
+  ],
+  "logic": "r1",
+  "benefit": {
+    "summary": {
+      "en": "Premium only 2% (Kharif), 1.5% (Rabi), 5% (commercial)",
+      "hi": "प्रीमियम सिर्फ़ 2% (खरीफ़), 1.5% (रबी), 5% (वाणिज्यिक)",
+      "te": "ప్రీమియం కేవలం 2% (ఖరీఫ్), 1.5% (రబీ), 5% (వాణిజ్య)"
+    },
+    "amount": null,
+    "unit": null,
+    "source": {
+      "doc": "pmfby.md",
+      "page": 2,
+      "quote": "The farmer pays a maximum premium of 2% of the sum insured for Kharif crops, 1.5% for Rabi crops and 5% for commercial and horticultural crops."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "land_record",
+    "sowing_certificate",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Enrol at your bank, a CSC or the PMFBY portal before the season's cut-off date.",
+      "hi": "सीज़न की अंतिम तिथि से पहले बैंक, CSC या PMFBY पोर्टल पर नामांकन करें।",
+      "te": "సీజన్ గడువు ముందే బ్యాంకు, CSC లేదా PMFBY పోర్టల్‌లో నమోదు చేయండి."
+    },
+    "source": {
+      "doc": "pmfby.md",
+      "page": 2,
+      "quote": "Enrol through your bank, a Common Service Centre (CSC), an insurance company agent, or the PMFBY portal before the cut-off date for the season."
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "pmfby.pdf",
+      "url": "https://pmfby.gov.in/pdf/Revamped%20Operational%20Guidelines_17th%20August%202020.pdf",
+      "label": "Official revamped operational guidelines (Kharif 2020), pmfby.gov.in",
+      "downloaded": "2026-10-28",
+      "sha256": "fc57c66ee9a275309bdcf84a81398376075bdd8657d026c673ef363a3a7616f8"
+    }
+  ]
+}

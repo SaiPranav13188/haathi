@@ -1,0 +1,134 @@
+{
+  "scheme_id": "pm_sym",
+  "version": "2023-01",
+  "doc": "pm_sym.md",
+  "name": {
+    "en": "PM Shram Yogi Maan-dhan",
+    "hi": "प्रधानमंत्री श्रम योगी मान-धन",
+    "te": "ప్రధానమంత్రి శ్రమ యోగి మాన్-ధన్"
+  },
+  "tagline": {
+    "en": "₹3,000 monthly pension for unorganised workers",
+    "hi": "असंगठित श्रमिकों के लिए ₹3,000 मासिक पेंशन",
+    "te": "అసంఘటిత కార్మికులకు నెలకు ₹3,000 పింఛను"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "pension",
+    "workers"
+  ],
+  "official_url": "https://maandhan.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "unorganised_worker",
+        "agri_labourer",
+        "self_employed"
+      ],
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 2,
+        "quote": "Workers engaged in professions such as: o Street vendors, rag pickers, rickshaw pullers o Construction workers, daily wage labourers o Agricultural workers, beedi workers o Domestic workers, weavers, artisans, fishermen, leather workers, etc."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        40
+      ],
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 2,
+        "quote": "Age Requirement: 18 to 40 years."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 180000,
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 2,
+        "quote": "Income Limit: Monthly income should be ₹15,000 or less."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "has_epf_esic_nps",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 3,
+        "quote": "Should not be covered under the Employees' Provident Fund (EPF), Employees' State Insurance Corporation (ESIC), or National Pension Scheme (NPS)."
+      }
+    },
+    {
+      "id": "r5",
+      "field": "is_income_tax_payer",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pm_sym.pdf",
+        "page": 3,
+        "quote": "Should not be an income taxpayer."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4 AND r5",
+  "benefit": {
+    "summary": {
+      "en": "₹3,000 per month after age 60",
+      "hi": "60 वर्ष के बाद ₹3,000 प्रति माह",
+      "te": "60 ఏళ్ల తర్వాత నెలకు ₹3,000"
+    },
+    "amount": 3000,
+    "unit": {
+      "en": "per month",
+      "hi": "प्रति माह",
+      "te": "నెలకు"
+    },
+    "source": {
+      "doc": "pm_sym.pdf",
+      "page": 2,
+      "quote": "Minimum Assured Pension: ₹3,000 per month after 60 years of age."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Enrol at a Common Service Centre (CSC) with Aadhaar and bank details.",
+      "hi": "आधार और बैंक विवरण के साथ CSC पर नामांकन करें।",
+      "te": "ఆధార్, బ్యాంక్ వివరాలతో CSCలో నమోదు చేయండి."
+    },
+    "source": {
+      "doc": "pm_sym.md",
+      "page": 2,
+      "quote": "Enrol at a Common Service Centre (CSC) or on the Maandhan portal"
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "pm_sym.pdf",
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/mar/doc202534512301.pdf",
+      "label": "PIB official fact sheet, Ministry of Labour (Mar 2025)",
+      "downloaded": "2026-10-28",
+      "sha256": "30bbfaa5c1ea873d654e74b060b7fd3e5247bba7a3ed9f1ca499cff875e12c99"
+    }
+  ]
+}

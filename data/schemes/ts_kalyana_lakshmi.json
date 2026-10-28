@@ -1,0 +1,164 @@
+{
+  "scheme_id": "ts_kalyana_lakshmi",
+  "version": "2024-04",
+  "doc": "ts_kalyana_lakshmi.md",
+  "name": {
+    "en": "Kalyana Lakshmi",
+    "hi": "कल्याण लक्ष्मी",
+    "te": "కళ్యాణ లక్ష్మి"
+  },
+  "tagline": {
+    "en": "₹1,00,116 at a daughter's marriage (SC/ST/BC/EBC)",
+    "hi": "बेटी की शादी पर ₹1,00,116 (SC/ST/BC/EBC)",
+    "te": "కూతురి పెళ్లికి ₹1,00,116 (SC/ST/BC/EBC)"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "women"
+  ],
+  "official_url": "https://telanganaepass.cgg.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "category",
+      "op": "in",
+      "value": [
+        "sc",
+        "st",
+        "bc",
+        "ebc"
+      ],
+      "source": {
+        "doc": "ts_kalyana_lakshmi.pdf",
+        "page": 1,
+        "quote": "belonging to Scheduled Castes/ Scheduled Tribes/Minorities/Backward Classes/Economically Backward Classes"
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_daughter_marrying",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_kalyana_lakshmi.md",
+        "page": 1,
+        "quote": "The bride must have completed 18 years of age at the time of marriage."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "area",
+      "op": "eq",
+      "value": "rural",
+      "source": {
+        "doc": "ts_kalyana_lakshmi.md",
+        "page": 1,
+        "quote": "The combined annual income of the parents should not exceed ₹1,50,000 in rural areas."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 150000,
+      "source": {
+        "doc": "ts_kalyana_lakshmi.md",
+        "page": 1,
+        "quote": "The combined annual income of the parents should not exceed ₹1,50,000 in rural areas."
+      }
+    },
+    {
+      "id": "r5",
+      "field": "area",
+      "op": "eq",
+      "value": "urban",
+      "source": {
+        "doc": "ts_kalyana_lakshmi.md",
+        "page": 1,
+        "quote": "The combined annual income of the parents should not exceed ₹2,00,000 in urban areas."
+      }
+    },
+    {
+      "id": "r6",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 200000,
+      "source": {
+        "doc": "ts_kalyana_lakshmi.md",
+        "page": 1,
+        "quote": "The combined annual income of the parents should not exceed ₹2,00,000 in urban areas."
+      }
+    },
+    {
+      "id": "r7",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_kalyana_lakshmi.pdf",
+        "page": 1,
+        "quote": "residing in Telangana State"
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r7 AND ((r3 AND r4) OR (r5 AND r6))",
+  "benefit": {
+    "summary": {
+      "en": "One-time ₹1,00,116 to the bride's mother",
+      "hi": "दुल्हन की माँ को एकमुश्त ₹1,00,116",
+      "te": "పెళ్లికూతురి తల్లికి ఒకేసారి ₹1,00,116"
+    },
+    "amount": 100116,
+    "unit": {
+      "en": "one time",
+      "hi": "एकमुश्त",
+      "te": "ఒకేసారి"
+    },
+    "source": {
+      "doc": "ts_kalyana_lakshmi_amount.pdf",
+      "page": 1,
+      "quote": "hereby enhance the financial assistance from Rs.75,116/- to Rs.1,00,116/-"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "caste_certificate",
+    "income_certificate",
+    "age_proof",
+    "marriage_proof",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply on Telangana ePASS after the marriage date is fixed; submit printouts at the MRO / Tahsildar office.",
+      "hi": "शादी की तारीख तय होने पर तेलंगाना ePASS पर आवेदन करें; प्रिंट MRO / तहसीलदार कार्यालय में जमा करें।",
+      "te": "పెళ్లి తేదీ ఖరారైన తర్వాత తెలంగాణ ePASSలో దరఖాస్తు చేసి, ప్రింట్‌లను MRO / తహసీల్దార్ కార్యాలయంలో ఇవ్వండి."
+    },
+    "source": {
+      "doc": "ts_kalyana_lakshmi.md",
+      "page": 2,
+      "quote": "Apply online on the Telangana ePASS portal (Kalyana Lakshmi / Shaadi Mubarak section) after the marriage date is fixed"
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "ts_kalyana_lakshmi.pdf",
+      "url": "https://goir.telangana.gov.in",
+      "label": "G.O.Ms.No.14 (BCW), 06/07/2017",
+      "downloaded": "2026-10-28",
+      "sha256": "9fead162b22519379270bbdf2bdc0635aa6ad93714253899a231978f65aff261"
+    },
+    {
+      "doc": "ts_kalyana_lakshmi_amount.pdf",
+      "url": "https://goir.telangana.gov.in",
+      "label": "G.O.Ms.No.8 (BCW), 03/04/2018",
+      "downloaded": "2026-10-28",
+      "sha256": "421265fd49f1d131d00c83991f893608a12a453ed91b636276549ba7b840c741"
+    }
+  ]
+}

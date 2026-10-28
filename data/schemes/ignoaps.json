@@ -1,0 +1,87 @@
+{
+  "scheme_id": "ignoaps",
+  "version": "2023-01",
+  "doc": "ignoaps.md",
+  "name": {
+    "en": "National Old Age Pension (IGNOAPS)",
+    "hi": "राष्ट्रीय वृद्धावस्था पेंशन (IGNOAPS)",
+    "te": "జాతీయ వృద్ధాప్య పింఛను (IGNOAPS)"
+  },
+  "tagline": {
+    "en": "Central pension for elders from BPL families",
+    "hi": "बीपीएल परिवारों के बुज़ुर्गों के लिए केंद्रीय पेंशन",
+    "te": "BPL కుటుంబాల వృద్ధులకు కేంద్ర పింఛను"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "seniors",
+    "pension"
+  ],
+  "official_url": "https://nsap.nic.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "gte",
+      "value": 60,
+      "source": {
+        "doc": "ignoaps.md",
+        "page": 1,
+        "quote": "The applicant must be aged 60 years or above."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ignoaps.md",
+        "page": 1,
+        "quote": "The applicant must belong to a household below the poverty line (BPL)."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "₹200–₹500/month central share, paid with the state pension",
+      "hi": "₹200–₹500/माह केंद्रीय हिस्सा, राज्य पेंशन के साथ",
+      "te": "నెలకు ₹200–₹500 కేంద్ర వాటా, రాష్ట్ర పింఛనుతో కలిపి"
+    },
+    "amount": 500,
+    "unit": {
+      "en": "per month (max)",
+      "hi": "प्रति माह (अधिकतम)",
+      "te": "నెలకు (గరిష్ఠం)"
+    },
+    "source": {
+      "doc": "ignoaps.md",
+      "page": 2,
+      "quote": "Central assistance of ₹200 per month for persons aged 60 to 79 years and ₹500 per month for persons aged 80 years and above."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "age_proof",
+    "ration_card",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply at the Gram Panchayat or Municipal office.",
+      "hi": "ग्राम पंचायत या नगरपालिका कार्यालय में आवेदन करें।",
+      "te": "గ్రామ పంచాయతీ లేదా మున్సిపల్ కార్యాలయంలో దరఖాస్తు చేయండి."
+    },
+    "source": {
+      "doc": "ignoaps.md",
+      "page": 2,
+      "quote": "Apply at the Gram Panchayat or Municipal office"
+    }
+  }
+}

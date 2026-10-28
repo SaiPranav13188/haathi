@@ -1,0 +1,96 @@
+{
+  "scheme_id": "pmjjby",
+  "version": "2022-06",
+  "doc": "pmjjby.md",
+  "name": {
+    "en": "PM Jeevan Jyoti Bima Yojana",
+    "hi": "प्रधानमंत्री जीवन ज्योति बीमा योजना",
+    "te": "ప్రధానమంత్రి జీవన్ జ్యోతి బీమా యోజన"
+  },
+  "tagline": {
+    "en": "₹2 lakh life cover for ₹436 a year",
+    "hi": "₹436 सालाना में ₹2 लाख जीवन बीमा",
+    "te": "ఏటా ₹436కే ₹2 లక్షల జీవిత బీమా"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "insurance"
+  ],
+  "official_url": "https://www.jansuraksha.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        50
+      ],
+      "source": {
+        "doc": "pmjjby.pdf",
+        "page": 2,
+        "quote": "Age 18-50 years to enroll; coverage continues up to age 55 for those who join before 50."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_bank_account",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "pmjjby.pdf",
+        "page": 2,
+        "quote": "Must have a savings bank or post office account."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "₹2,00,000 life cover for ₹436/year",
+      "hi": "₹436/वर्ष में ₹2,00,000 जीवन बीमा",
+      "te": "ఏటా ₹436కే ₹2,00,000 జీవిత బీమా"
+    },
+    "amount": 200000,
+    "unit": {
+      "en": "cover",
+      "hi": "बीमा राशि",
+      "te": "బీమా మొత్తం"
+    },
+    "source": {
+      "doc": "pmjjby.md",
+      "page": 2,
+      "quote": "Life cover of ₹2,00,000 for a premium of ₹436 per year"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Enrol at your bank, via net banking or on the Jan Suraksha portal.",
+      "hi": "बैंक, नेट बैंकिंग या जन सुरक्षा पोर्टल से नामांकन करें।",
+      "te": "బ్యాంకు, నెట్ బ్యాంకింగ్ లేదా జన్ సురక్ష పోర్టల్ ద్వారా నమోదు చేయండి."
+    },
+    "source": {
+      "doc": "pmjjby.md",
+      "page": 2,
+      "quote": "Enrol at your bank branch, through net banking, or on the Jan Suraksha portal."
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "pmjjby.pdf",
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551501.pdf",
+      "label": "PIB official fact sheet (May 2025)",
+      "downloaded": "2026-10-28",
+      "sha256": "82bcbd7aa919703fc8bb1699c789ddbc0d02dd98b0fcb2d9426afea6581f7031"
+    }
+  ]
+}

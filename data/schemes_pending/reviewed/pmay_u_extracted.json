@@ -1,0 +1,84 @@
+{
+  "scheme_id": "pmay_u_extracted",
+  "version": "extracted",
+  "doc": "pmay_u.pdf",
+  "name": {
+    "en": "PMAY-Urban 2.0"
+  },
+  "tagline": {
+    "en": "Financial assistance to eligible families belonging to EWS/LIG/MIG categories to construct, purchase or rent a house at an affordable cost under various verticals like BLC, AHP, ARH, and ISS."
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "housing"
+  ],
+  "official_url": "https://pmay-urban.gov.in/uploads/guidelines/Operational-Guidelines-of-PMAY-U-2.pdf",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "area",
+      "op": "eq",
+      "value": "urban",
+      "source": {
+        "doc": "pmay_u.pdf",
+        "page": 17,
+        "quote": "Families belonging to EWS/LIG/MIG category, living in urban areas, having no pucca house anywhere in the country, are eligible to purchase or construct a house under PMAY-U 2.0."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "owns_pucca_house",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pmay_u.pdf",
+        "page": 17,
+        "quote": "Families belonging to EWS/LIG/MIG category, living in urban areas, having no pucca house anywhere in the country, are eligible to purchase or construct a house under PMAY-U 2.0."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 900000,
+      "source": {
+        "doc": "pmay_u.pdf",
+        "page": 17,
+        "quote": "EWS households are defined as households with an annual income of up to ₹3 lakh. LIG is defined as households with an annual income from ₹3 lakh up to ₹6 lakh. MIG is defined as households with an annual income from ₹6 lakh up to ₹9 lakh."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "Financial assistance to eligible families belonging to EWS/LIG/MIG categories to construct, purchase or rent a house at an affordable cost under various verticals like BLC, AHP, ARH, and ISS."
+    },
+    "amount": null,
+    "source": {
+      "doc": "pmay_u.pdf",
+      "page": 15,
+      "quote": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) - 'Housing for All' Mission for urban areas will be implemented for 5 years from 01.09.2024 to provide Central Assistance to all eligible beneficiaries/households/ implementing agencies through States/Union Territories (UTs)/Primary Lending Institutions (PLIs) to construct, purchase or rent a house at an affordable cost."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "ownership proof of land"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Beneficiaries can register themselves for housing demand with all details on the unified Web-portal or approach the ULBs/Implementing Agencies with necessary documents."
+    },
+    "source": {
+      "doc": "pmay_u.pdf",
+      "page": 18,
+      "quote": "The beneficiaries can register themselves for housing demand with all details on unified Web-portal."
+    }
+  },
+  "extraction": {
+    "rules_kept": 3,
+    "rules_rejected_no_quote": 0
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "scheme_id": "pmsby_extracted",
+  "version": "extracted",
+  "doc": "pmsby.pdf",
+  "name": {
+    "en": "PMSBY"
+  },
+  "tagline": {
+    "en": "Accidental death and disability coverage of up to ₹2 Lakhs for death or total and irrecoverable disability, and ₹1 Lakh for partial and irrecoverable disability."
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "insurance"
+  ],
+  "official_url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551401.pdf",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        70
+      ],
+      "source": {
+        "doc": "pmsby.pdf",
+        "page": 4,
+        "quote": "Individuals aged 18 to 70 years with a savings account and auto-debit consent at a participating bank or post office."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_bank_account",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "pmsby.pdf",
+        "page": 4,
+        "quote": "Individuals aged 18 to 70 years with a savings account and auto-debit consent at a participating bank or post office."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "Accidental death and disability coverage of up to ₹2 Lakhs for death or total and irrecoverable disability, and ₹1 Lakh for partial and irrecoverable disability."
+    },
+    "amount": 200000,
+    "source": {
+      "doc": "pmsby.pdf",
+      "page": 4,
+      "quote": "In case of death due to accident: 2 Lakhs will be paid to the nominee. √ For total and irrecoverable disability: Loss of both eyes, or Loss of both hands or both feet, or Loss of sight in one eye and loss of use of one hand or one foot: Benefit Amount 2 Lakhs √ For partial and irrecoverable disability: Loss of sight in one eye, or Loss of use of one hand or one foot: Benefit Amount1 Lakh"
+    }
+  },
+  "documents_required": [
+    "aadhaar"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Visit the bank branch where you have a savings account or download the application form from the official site and submit it to the bank along with necessary documents. Alternatively, apply online using the bank's Net banking facility."
+    },
+    "source": {
+      "doc": "pmsby.pdf",
+      "page": 5,
+      "quote": "To enrol in PMSBY offline, one can visit the bank branch where they have a savings account. Alternatively, the candidate can visit the official site: https://jansuraksha.gov.in/Forms-PMSBY.aspx to download the application form."
+    }
+  },
+  "extraction": {
+    "rules_kept": 2,
+    "rules_rejected_no_quote": 0
+  }
+}

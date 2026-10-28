@@ -1,0 +1,88 @@
+{
+  "scheme_id": "apy_extracted",
+  "version": "extracted",
+  "doc": "apy.pdf",
+  "name": {
+    "en": "Atal Pension Yojana"
+  },
+  "tagline": {
+    "en": "Guaranteed lifelong monthly pension between ₹1,000 and ₹5,000 from age 60 until death, based on contributions."
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "pension"
+  ],
+  "official_url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551701.pdf",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        40
+      ],
+      "source": {
+        "doc": "apy.pdf",
+        "page": 2,
+        "quote": "Initially available to all citizens of India between 18 and 40 years of age."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "is_income_tax_payer",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "apy.pdf",
+        "page": 2,
+        "quote": "With effect from 1st October 2022, individuals paying income tax are not eligible to join the scheme."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "has_bank_account",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "apy.pdf",
+        "page": 2,
+        "quote": "Eligibility Criteria: Bank Account, Requirement: Mandatory for auto-debit of contributions"
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "Guaranteed lifelong monthly pension between ₹1,000 and ₹5,000 from age 60 until death, based on contributions."
+    },
+    "amount": 60000,
+    "source": {
+      "doc": "apy.pdf",
+      "page": 3,
+      "quote": "Feature: Guaranteed Monthly Pension, Benefit: Lifelong pension between ₹1,000 to ₹5,000 from age 60 until death"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "bank_passbook",
+    "mobile_number"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Eligible individuals can apply online through net-banking, mobile apps, bank web-portals, or offline by visiting their bank branch where the savings bank account is held."
+    },
+    "source": {
+      "doc": "apy.pdf",
+      "page": 3,
+      "quote": "Activating online channels such as e-APY, net-banking, mobile app and bank's web-portal, for easy online onboarding."
+    }
+  },
+  "extraction": {
+    "rules_kept": 3,
+    "rules_rejected_no_quote": 0
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "scheme_id": "kcc",
+  "version": "2024-01",
+  "doc": "kcc.md",
+  "name": {
+    "en": "Kisan Credit Card",
+    "hi": "किसान क्रेडिट कार्ड",
+    "te": "కిసాన్ క్రెడిట్ కార్డు"
+  },
+  "tagline": {
+    "en": "Crop loans at an effective 4% interest",
+    "hi": "प्रभावी 4% ब्याज पर फसल ऋण",
+    "te": "ప్రభావవంతమైన 4% వడ్డీకే పంట రుణం"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "farmers"
+  ],
+  "official_url": "https://www.myscheme.gov.in/schemes/kcc",
+  "last_verified": "2026-10-28",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "farmer"
+      ],
+      "source": {
+        "doc": "kcc.md",
+        "page": 1,
+        "quote": "Farmers, tenant farmers, oral lessees and sharecroppers engaged in cultivation are eligible."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        75
+      ],
+      "source": {
+        "doc": "kcc.md",
+        "page": 1,
+        "quote": "The borrower should be between 18 and 75 years of age"
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "Loans up to ₹3,00,000 at an effective 4% interest",
+      "hi": "प्रभावी 4% ब्याज पर ₹3,00,000 तक ऋण",
+      "te": "ప్రభావవంతమైన 4% వడ్డీకి ₹3,00,000 వరకు రుణం"
+    },
+    "amount": 300000,
+    "unit": {
+      "en": "credit limit",
+      "hi": "ऋण सीमा",
+      "te": "రుణ పరిమితి"
+    },
+    "source": {
+      "doc": "kcc.md",
+      "page": 2,
+      "quote": "Short-term loans up to ₹3,00,000 at 7% interest, with an additional 3% prompt repayment incentive, making the effective rate 4% per year."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "land_record",
+    "photo",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply at any bank branch (commercial, RRB or cooperative).",
+      "hi": "किसी भी बैंक शाखा (वाणिज्यिक, RRB या सहकारी) में आवेदन करें।",
+      "te": "ఏ బ్యాంకు శాఖలోనైనా (వాణిజ్య, RRB లేదా సహకార) దరఖాస్తు చేయండి."
+    },
+    "source": {
+      "doc": "kcc.md",
+      "page": 2,
+      "quote": "Apply at any commercial bank, regional rural bank or cooperative bank branch"
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "kcc.html",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13270",
+      "label": "RBI circular: Modified Interest Subvention Scheme FY 2025-26 (13 Jan 2026)",
+      "downloaded": "2026-10-28",
+      "sha256": "c5cbf9bc1c9acfbc1b2993820b0c4766586aca7f892e9c997142017bb0b4f1a4"
+    }
+  ]
+}

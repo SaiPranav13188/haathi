@@ -1,0 +1,111 @@
+{
+  "scheme_id": "ts_indiramma_atmiya_bharosa",
+  "version": "2025-01",
+  "doc": "ts_indiramma_atmiya_bharosa.md",
+  "name": {
+    "en": "Indiramma Atmiya Bharosa",
+    "hi": "इंदिरम्मा आत्मीय भरोसा",
+    "te": "ఇందిరమ్మ ఆత్మీయ భరోసా"
+  },
+  "tagline": {
+    "en": "Yearly support for landless farm labour families",
+    "hi": "भूमिहीन खेतिहर मज़दूर परिवारों को सालाना सहायता",
+    "te": "భూమిలేని వ్యవసాయ కూలీ కుటుంబాలకు ఏటా సాయం"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "farmers",
+    "workers"
+  ],
+  "official_url": "https://www.telangana.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "agri_labourer"
+      ],
+      "source": {
+        "doc": "ts_indiramma_atmiya_bharosa.md",
+        "page": 1,
+        "quote": "The scheme is for landless agricultural labour families residing in Telangana."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "land_acres",
+      "op": "lte",
+      "value": 0,
+      "source": {
+        "doc": "ts_indiramma_atmiya_bharosa.md",
+        "page": 1,
+        "quote": "The family must not own any agricultural land."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_indiramma_atmiya_bharosa.md",
+        "page": 1,
+        "quote": "The scheme is for landless agricultural labour families residing in Telangana."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "has_mgnregs_job_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_indiramma_atmiya_bharosa.md",
+        "page": 1,
+        "quote": "with at least 20 days of work in the reference year"
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4",
+  "benefit": {
+    "summary": {
+      "en": "₹12,000 per year per family",
+      "hi": "प्रति परिवार ₹12,000 प्रति वर्ष",
+      "te": "కుటుంబానికి ఏటా ₹12,000"
+    },
+    "amount": 12000,
+    "unit": {
+      "en": "per year",
+      "hi": "प्रति वर्ष",
+      "te": "ఏటా"
+    },
+    "source": {
+      "doc": "ts_indiramma_atmiya_bharosa.md",
+      "page": 2,
+      "quote": "Financial assistance of ₹12,000 per year is paid to each eligible landless agricultural labour family"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "job_card",
+    "bank_passbook",
+    "ration_card"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Identified in Gram Sabhas from MGNREGS job cards. If left out, apply at the Gram Panchayat or Mandal office.",
+      "hi": "मनरेगा जॉब कार्ड से ग्राम सभा में चयन। छूट गए हों तो ग्राम पंचायत या मंडल कार्यालय में आवेदन करें।",
+      "te": "ఉపాధి హామీ జాబ్ కార్డుల ఆధారంగా గ్రామసభలో ఎంపిక. పేరు లేకపోతే గ్రామ పంచాయతీ లేదా మండల కార్యాలయంలో దరఖాస్తు చేయండి."
+    },
+    "source": {
+      "doc": "ts_indiramma_atmiya_bharosa.md",
+      "page": 2,
+      "quote": "Beneficiaries are identified through Gram Sabhas using MGNREGS job card records."
+    }
+  }
+}

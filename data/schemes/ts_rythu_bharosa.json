@@ -1,0 +1,103 @@
+{
+  "scheme_id": "ts_rythu_bharosa",
+  "version": "2025-01",
+  "doc": "ts_rythu_bharosa.md",
+  "name": {
+    "en": "Rythu Bharosa",
+    "hi": "रैतु भरोसा",
+    "te": "రైతు భరోసా"
+  },
+  "tagline": {
+    "en": "Investment support for Telangana farmers",
+    "hi": "तेलंगाना के किसानों के लिए निवेश सहायता",
+    "te": "తెలంగాణ రైతులకు పెట్టుబడి సాయం"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "farmers"
+  ],
+  "official_url": "https://rythubharosa.telangana.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": "2025-01-26",
+  "change_note": {
+    "en": "Replaced Rythu Bandhu; support raised from ₹10,000 to ₹12,000 per acre per year.",
+    "hi": "रैतु बंधु की जगह; सहायता ₹10,000 से बढ़कर ₹12,000 प्रति एकड़ प्रति वर्ष।",
+    "te": "రైతు బంధు స్థానంలో; సాయం ఎకరానికి ఏటా ₹10,000 నుండి ₹12,000కి పెరిగింది."
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "farmer"
+      ],
+      "source": {
+        "doc": "ts_rythu_bharosa.md",
+        "page": 1,
+        "quote": "All pattadar farmers owning cultivable agricultural land in Telangana are eligible for investment support."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "land_acres",
+      "op": "gt",
+      "value": 0,
+      "source": {
+        "doc": "ts_rythu_bharosa.md",
+        "page": 1,
+        "quote": "All pattadar farmers owning cultivable agricultural land in Telangana are eligible for investment support."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_rythu_bharosa.md",
+        "page": 1,
+        "quote": "farmers who hold cultivable agricultural land in the State of Telangana"
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "₹12,000 per acre per year (₹6,000 each season)",
+      "hi": "₹12,000 प्रति एकड़ प्रति वर्ष (हर सीज़न ₹6,000)",
+      "te": "ఎకరానికి ఏటా ₹12,000 (ప్రతి సీజన్‌కు ₹6,000)"
+    },
+    "amount": 12000,
+    "unit": {
+      "en": "per acre / year",
+      "hi": "प्रति एकड़ / वर्ष",
+      "te": "ఎకరానికి / ఏటా"
+    },
+    "per_acre": true,
+    "source": {
+      "doc": "ts_rythu_bharosa.md",
+      "page": 2,
+      "quote": "Investment support of ₹12,000 per acre per year is paid in two instalments of ₹6,000 per acre"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "land_record",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Registered pattadars get it automatically. New pattadars: meet your Agriculture Extension Officer (AEO) with passbook and bank details.",
+      "hi": "पंजीकृत पट्टादारों को अपने आप मिलता है। नए पट्टादार: पासबुक और बैंक विवरण के साथ कृषि विस्तार अधिकारी (AEO) से मिलें।",
+      "te": "నమోదైన పట్టాదారులకు ఆటోమేటిక్‌గా వస్తుంది. కొత్త పట్టాదారులు: పాస్‌బుక్, బ్యాంక్ వివరాలతో వ్యవసాయ విస్తరణ అధికారి (AEO)ని కలవండి."
+    },
+    "source": {
+      "doc": "ts_rythu_bharosa.md",
+      "page": 2,
+      "quote": "New pattadars should contact the local Agriculture Extension Officer (AEO)"
+    }
+  }
+}

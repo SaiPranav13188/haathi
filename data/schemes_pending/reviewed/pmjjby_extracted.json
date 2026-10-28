@@ -1,0 +1,76 @@
+{
+  "scheme_id": "pmjjby_extracted",
+  "version": "extracted",
+  "doc": "pmjjby.pdf",
+  "name": {
+    "en": "PMJJBY"
+  },
+  "tagline": {
+    "en": "₹2 lakh life insurance in case of the subscriber's death (from any cause)."
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "insurance"
+  ],
+  "official_url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551501.pdf",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        50
+      ],
+      "source": {
+        "doc": "pmjjby.pdf",
+        "page": 2,
+        "quote": "Age 18-50 years to enroll; coverage continues up to age 55 for those who join before 50."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_bank_account",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "pmjjby.pdf",
+        "page": 2,
+        "quote": "Must have a savings bank or post office account."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "₹2 lakh life insurance in case of the subscriber's death (from any cause)."
+    },
+    "amount": 200000,
+    "source": {
+      "doc": "pmjjby.pdf",
+      "page": 2,
+      "quote": "Coverage: ₹2 lakh life insurance in case of the subscriber's death (from any cause)."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Available at bank branches, post offices, or online with consent and basic KYC."
+    },
+    "source": {
+      "doc": "pmjjby.pdf",
+      "page": 2,
+      "quote": "Simple Enrollment: Available at bank branches, post offices, or online. Consent and basic KYC (Aadhaar) required."
+    }
+  },
+  "extraction": {
+    "rules_kept": 2,
+    "rules_rejected_no_quote": 0
+  }
+}

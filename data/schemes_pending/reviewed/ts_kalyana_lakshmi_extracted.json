@@ -1,0 +1,78 @@
+{
+  "scheme_id": "ts_kalyana_lakshmi_extracted",
+  "version": "extracted",
+  "doc": "ts_kalyana_lakshmi.pdf",
+  "name": {
+    "en": "Kalyana Lakshmi"
+  },
+  "tagline": {
+    "en": "Financial assistance at the time of marriage for unmarried girls belonging to SC, ST, Minorities, BC, and EBC."
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "women"
+  ],
+  "official_url": "goir.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_kalyana_lakshmi.pdf",
+        "page": 1,
+        "quote": "residing in Telangana State"
+      }
+    },
+    {
+      "id": "r2",
+      "field": "category",
+      "op": "in",
+      "value": [
+        "sc",
+        "st",
+        "minority",
+        "bc",
+        "ebc"
+      ],
+      "source": {
+        "doc": "ts_kalyana_lakshmi.pdf",
+        "page": 1,
+        "quote": "belonging to Scheduled Castes/ Scheduled Tribes/Minorities/Backward Classes/Economically Backward Classes"
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "Financial assistance at the time of marriage for unmarried girls belonging to SC, ST, Minorities, BC, and EBC."
+    },
+    "amount": 75116,
+    "source": {
+      "doc": "ts_kalyana_lakshmi.pdf",
+      "page": 1,
+      "quote": "a one time financial assistance of Rs.75,116/- at the time of marriage shall be granted to every Scheduled Castes/Scheduled Tribes/Minorities/Backward Classes/Economically Backward Classes unmarried girls"
+    }
+  },
+  "documents_required": [
+    "aadhaar"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply online through the e-pass portal handled by CGG."
+    },
+    "source": {
+      "doc": "ts_kalyana_lakshmi.pdf",
+      "page": 1,
+      "quote": "CGG is the agency handling the online data in e-pass portal regarding Kalyana Lakshmi programme, implementations."
+    }
+  },
+  "extraction": {
+    "rules_kept": 2,
+    "rules_rejected_no_quote": 1
+  }
+}

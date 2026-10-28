@@ -1,0 +1,61 @@
+{
+  "scheme_id": "pm_vishwakarma_extracted",
+  "version": "extracted",
+  "doc": "pm_vishwakarma.pdf",
+  "name": {
+    "en": "PM Vishwakarma"
+  },
+  "tagline": {
+    "en": "Collateral-free credit support of up to ₹1 lakh (first tranche) and ₹2 lakh (second tranche) with a concessional interest rate of 5%, skill upgradation, toolkit incentive of ₹15,000, and marketing support."
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "workers"
+  ],
+  "official_url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/sep/doc2023918253401.pdf",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "eq",
+      "value": "artisan",
+      "source": {
+        "doc": "pm_vishwakarma.pdf",
+        "page": 1,
+        "quote": "Named the 'PM Vishwakarma Yojana', the scheme was launched on the occasion of Vishwakarma Jayanti on September 17, 2023, at the India International Convention and Expo Centre in Dwarka, New Delhi."
+      }
+    }
+  ],
+  "logic": "r1",
+  "benefit": {
+    "summary": {
+      "en": "Collateral-free credit support of up to ₹1 lakh (first tranche) and ₹2 lakh (second tranche) with a concessional interest rate of 5%, skill upgradation, toolkit incentive of ₹15,000, and marketing support."
+    },
+    "amount": 300000,
+    "source": {
+      "doc": "pm_vishwakarma.pdf",
+      "page": 2,
+      "quote": "They will receive collateral-free credit support of up to ₹1 lakh (first tranche) and ₹2 lakh (second tranche) with a concessional interest rate of 5%."
+    }
+  },
+  "documents_required": [
+    "aadhaar"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "The Vishwakarmas will be registered free of charge through Common Services Centres using a biometric-based PM Vishwakarma Portal."
+    },
+    "source": {
+      "doc": "pm_vishwakarma.pdf",
+      "page": 2,
+      "quote": "The Vishwakarmas will be registered free of charge through Common Services Centres using a biometric-based PM Vishwakarma Portal."
+    }
+  },
+  "extraction": {
+    "rules_kept": 1,
+    "rules_rejected_no_quote": 0
+  }
+}

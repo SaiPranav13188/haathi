@@ -1,0 +1,112 @@
+{
+  "scheme_id": "apy",
+  "version": "2022-10",
+  "doc": "apy.md",
+  "name": {
+    "en": "Atal Pension Yojana",
+    "hi": "अटल पेंशन योजना",
+    "te": "అటల్ పెన్షన్ యోజన"
+  },
+  "tagline": {
+    "en": "Guaranteed ₹1,000–₹5,000 monthly pension after 60",
+    "hi": "60 के बाद ₹1,000–₹5,000 मासिक पेंशन की गारंटी",
+    "te": "60 తర్వాత నెలకు ₹1,000–₹5,000 హామీ పింఛను"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "pension",
+    "workers"
+  ],
+  "official_url": "https://www.npscra.nsdl.co.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": "2022-10-01",
+  "change_note": {
+    "en": "Income tax payers can no longer join.",
+    "hi": "आयकरदाता अब नहीं जुड़ सकते।",
+    "te": "ఆదాయపు పన్ను చెల్లింపుదారులు ఇకపై చేరలేరు."
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        40
+      ],
+      "source": {
+        "doc": "apy.pdf",
+        "page": 2,
+        "quote": "Initially available to all citizens of India between 18 and 40 years of age."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_bank_account",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "apy.pdf",
+        "page": 2,
+        "quote": "Eligibility Criteria: Bank Account, Requirement: Mandatory for auto-debit of contributions"
+      }
+    },
+    {
+      "id": "r3",
+      "field": "is_income_tax_payer",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "apy.pdf",
+        "page": 2,
+        "quote": "With effect from 1st October 2022, individuals paying income tax are not eligible to join the scheme."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "₹1,000 to ₹5,000 per month after age 60",
+      "hi": "60 वर्ष के बाद ₹1,000 से ₹5,000 प्रति माह",
+      "te": "60 ఏళ్ల తర్వాత నెలకు ₹1,000 నుండి ₹5,000"
+    },
+    "amount": 5000,
+    "unit": {
+      "en": "per month (max)",
+      "hi": "प्रति माह (अधिकतम)",
+      "te": "నెలకు (గరిష్ఠం)"
+    },
+    "source": {
+      "doc": "apy.pdf",
+      "page": 3,
+      "quote": "Lifelong pension between ₹1,000 to ₹5,000 from age 60 until death"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Fill the APY form at your bank or post office, or use net banking.",
+      "hi": "अपने बैंक या डाकघर में APY फॉर्म भरें या नेट बैंकिंग से जुड़ें।",
+      "te": "మీ బ్యాంకు లేదా పోస్టాఫీసులో APY ఫారం నింపండి లేదా నెట్ బ్యాంకింగ్ ద్వారా చేరండి."
+    },
+    "source": {
+      "doc": "apy.md",
+      "page": 2,
+      "quote": "Fill the APY registration form at your bank or post office where you hold a savings account"
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "apy.pdf",
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551701.pdf",
+      "label": "PIB official fact sheet (May 2025)",
+      "downloaded": "2026-10-28",
+      "sha256": "a660f44cb5e3fd4f3b7dab5f094a7e2a3eb93e7eb304f7f6f5d37c580346e428"
+    }
+  ]
+}

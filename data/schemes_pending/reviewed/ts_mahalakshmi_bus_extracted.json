@@ -1,0 +1,75 @@
+{
+  "scheme_id": "ts_mahalakshmi_bus_extracted",
+  "version": "extracted",
+  "doc": "ts_mahalakshmi_bus.pdf",
+  "name": {
+    "en": "Mahalakshmi free bus"
+  },
+  "tagline": {
+    "en": "Free travel for girls, women, and transgender persons in TSRTC Palle Velugu and Express buses within Telangana state."
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "women"
+  ],
+  "official_url": "goir.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_mahalakshmi_bus.pdf",
+        "page": 1,
+        "quote": "The Government of Telangana hereby launch the \"6 Guarantees - Maha Lakshmi\" scheme, under which girls and women of all age groups and transgender persons who are domicile of Telangana shall freely travel in the Telangana State Road Transport Corporation run buses."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "gender",
+      "op": "in",
+      "value": [
+        "female",
+        "transgender"
+      ],
+      "source": {
+        "doc": "ts_mahalakshmi_bus.pdf",
+        "page": 1,
+        "quote": "The Scheme is for the benefit of girls and women of all age groups and transgender persons who are domiciled in Telangana."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "Free travel for girls, women, and transgender persons in TSRTC Palle Velugu and Express buses within Telangana state."
+    },
+    "amount": null,
+    "source": {
+      "doc": "ts_mahalakshmi_bus.pdf",
+      "page": 1,
+      "quote": "girls and women of all age groups and transgender persons who are domicile of Telangana shall freely travel in the Telangana State Road Transport Corporation run buses."
+    }
+  },
+  "documents_required": [
+    "aadhaar"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Eligible beneficiaries can travel for free in eligible TSRTC buses within Telangana. A software-based Maha Lakshmi smart card will be developed in due course."
+    },
+    "source": {
+      "doc": "ts_mahalakshmi_bus.pdf",
+      "page": 1,
+      "quote": "The VC & MD, TSRTC shall make arrangements to develop a software based Maha Lakshmi smart card in due course."
+    }
+  },
+  "extraction": {
+    "rules_kept": 2,
+    "rules_rejected_no_quote": 0
+  }
+}

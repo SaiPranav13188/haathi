@@ -1,0 +1,113 @@
+{
+  "scheme_id": "ap_ntr_bharosa_pension",
+  "version": "2024-07",
+  "doc": "ap_ntr_bharosa_pension.md",
+  "name": {
+    "en": "NTR Bharosa Old Age Pension",
+    "hi": "एनटीआर भरोसा वृद्धावस्था पेंशन",
+    "te": "ఎన్టీఆర్ భరోసా వృద్ధాప్య పింఛను"
+  },
+  "tagline": {
+    "en": "₹4,000 a month at your doorstep for elders 60+",
+    "hi": "60+ बुज़ुर्गों को घर पर हर महीने ₹4,000",
+    "te": "60 ఏళ్లు పైబడిన వారికి ఇంటి వద్దే నెలకు ₹4,000"
+  },
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "categories": [
+    "seniors",
+    "pension"
+  ],
+  "official_url": "https://sspensions.ap.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": "2024-07-01",
+  "change_note": {
+    "en": "Pension raised from ₹3,000 to ₹4,000 per month.",
+    "hi": "पेंशन ₹3,000 से बढ़कर ₹4,000 प्रति माह।",
+    "te": "పింఛను నెలకు ₹3,000 నుండి ₹4,000కి పెరిగింది."
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "gte",
+      "value": 60,
+      "source": {
+        "doc": "ap_ntr_bharosa_pension.md",
+        "page": 1,
+        "quote": "Old age pension is given to persons who have completed 60 years of age and reside in Andhra Pradesh."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "state",
+      "op": "eq",
+      "value": "Andhra Pradesh",
+      "source": {
+        "doc": "ap_ntr_bharosa_pension.md",
+        "page": 1,
+        "quote": "Old age pension is given to persons who have completed 60 years of age and reside in Andhra Pradesh."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ap_ntr_bharosa_pension.md",
+        "page": 1,
+        "quote": "The family must hold a white rice card."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "is_govt_employee",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "ap_ntr_bharosa_pension.md",
+        "page": 1,
+        "quote": "Persons who are government employees or pensioners are not eligible."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4",
+  "benefit": {
+    "summary": {
+      "en": "₹4,000 per month, delivered at home",
+      "hi": "₹4,000 प्रति माह, घर पर",
+      "te": "నెలకు ₹4,000, ఇంటి వద్దే"
+    },
+    "amount": 4000,
+    "unit": {
+      "en": "per month",
+      "hi": "प्रति माह",
+      "te": "నెలకు"
+    },
+    "source": {
+      "doc": "ap_ntr_bharosa_pension.md",
+      "page": 2,
+      "quote": "A monthly pension of ₹4,000 is delivered at the doorstep"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "age_proof",
+    "ration_card",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply at your Village / Ward Secretariat.",
+      "hi": "अपने ग्राम / वार्ड सचिवालय में आवेदन करें।",
+      "te": "మీ గ్రామ / వార్డు సచివాలయంలో దరఖాస్తు చేయండి."
+    },
+    "source": {
+      "doc": "ap_ntr_bharosa_pension.md",
+      "page": 2,
+      "quote": "Apply at your Village / Ward Secretariat."
+    }
+  }
+}

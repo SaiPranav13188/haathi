@@ -1,0 +1,85 @@
+{
+  "scheme_id": "pmay_g",
+  "version": "2024-08",
+  "doc": "pmay_g.md",
+  "name": {
+    "en": "PM Awas Yojana – Gramin",
+    "hi": "प्रधानमंत्री आवास योजना – ग्रामीण",
+    "te": "ప్రధానమంత్రి ఆవాస్ యోజన – గ్రామీణ"
+  },
+  "tagline": {
+    "en": "Help to build a pucca house in villages",
+    "hi": "गाँवों में पक्का घर बनाने में मदद",
+    "te": "గ్రామాల్లో పక్కా ఇల్లు కట్టుకోవడానికి సాయం"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "housing"
+  ],
+  "official_url": "https://pmayg.nic.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "area",
+      "op": "eq",
+      "value": "rural",
+      "source": {
+        "doc": "pmay_g.md",
+        "page": 1,
+        "quote": "The scheme covers houseless households and households living in kutcha houses in rural areas."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "owns_pucca_house",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pmay_g.md",
+        "page": 1,
+        "quote": "The household must not own a pucca house."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "₹1,20,000 (plains) or ₹1,30,000 (hilly areas)",
+      "hi": "₹1,20,000 (मैदानी) या ₹1,30,000 (पहाड़ी क्षेत्र)",
+      "te": "₹1,20,000 (మైదాన) లేదా ₹1,30,000 (కొండ ప్రాంతాలు)"
+    },
+    "amount": 120000,
+    "unit": {
+      "en": "one time",
+      "hi": "एकमुश्त",
+      "te": "ఒకేసారి"
+    },
+    "source": {
+      "doc": "pmay_g.md",
+      "page": 2,
+      "quote": "Assistance of ₹1,20,000 in plain areas and ₹1,30,000 in hilly and difficult areas for building a house."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "job_card",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Contact your Gram Panchayat; families are picked from the Awaas+ survey.",
+      "hi": "अपनी ग्राम पंचायत से संपर्क करें; परिवार Awaas+ सर्वे से चुने जाते हैं।",
+      "te": "మీ గ్రామ పంచాయతీని సంప్రదించండి; Awaas+ సర్వే ద్వారా కుటుంబాల ఎంపిక."
+    },
+    "source": {
+      "doc": "pmay_g.md",
+      "page": 2,
+      "quote": "Contact your Gram Panchayat."
+    }
+  }
+}

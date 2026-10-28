@@ -1,0 +1,112 @@
+{
+  "scheme_id": "post_matric_sc",
+  "version": "2023-06",
+  "doc": "post_matric_sc.md",
+  "name": {
+    "en": "Post-Matric Scholarship for SC Students",
+    "hi": "एससी छात्रों के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
+    "te": "SC విద్యార్థులకు పోస్ట్ మెట్రిక్ స్కాలర్‌షిప్"
+  },
+  "tagline": {
+    "en": "Fees + allowance for SC students in Class 11 and above",
+    "hi": "कक्षा 11 और ऊपर के एससी छात्रों को फीस + भत्ता",
+    "te": "11వ తరగతి ఆపై చదివే SC విద్యార్థులకు ఫీజు + భత్యం"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "students"
+  ],
+  "official_url": "https://scholarships.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "category",
+      "op": "in",
+      "value": [
+        "sc"
+      ],
+      "source": {
+        "doc": "post_matric_sc.pdf",
+        "page": 2,
+        "quote": "SC students in higher education"
+      }
+    },
+    {
+      "id": "r2",
+      "field": "education_level",
+      "op": "in",
+      "value": [
+        "class_11_12",
+        "college"
+      ],
+      "source": {
+        "doc": "post_matric_sc.pdf",
+        "page": 4,
+        "quote": "Scholarships will be given for the study of all recognized post-matriculation or postsecondary courses"
+      }
+    },
+    {
+      "id": "r3",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 250000,
+      "source": {
+        "doc": "post_matric_sc.pdf",
+        "page": 5,
+        "quote": "does not exceed Rs. 2,50,000/-(Rupees Two lakh Fifty thousand only) during the last Financial Year."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "Fees paid + ₹2,500 to ₹13,500 yearly allowance",
+      "hi": "फीस भुगतान + ₹2,500 से ₹13,500 वार्षिक भत्ता",
+      "te": "ఫీజు చెల్లింపు + ఏటా ₹2,500 నుండి ₹13,500 భత్యం"
+    },
+    "amount": 13500,
+    "unit": {
+      "en": "per year (max)",
+      "hi": "प्रति वर्ष (अधिकतम)",
+      "te": "ఏటా (గరిష్ఠం)"
+    },
+    "source": {
+      "doc": "post_matric_sc.md",
+      "page": 2,
+      "quote": "an academic allowance of ₹2,500 to ₹13,500 per year depending on the course."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "caste_certificate",
+    "income_certificate",
+    "marks_memo",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply on the National Scholarship Portal or Telangana ePASS as notified.",
+      "hi": "राष्ट्रीय छात्रवृत्ति पोर्टल या तेलंगाना ePASS पर आवेदन करें।",
+      "te": "నేషనల్ స్కాలర్‌షిప్ పోర్టల్ లేదా తెలంగాణ ePASSలో దరఖాస్తు చేయండి."
+    },
+    "source": {
+      "doc": "post_matric_sc.md",
+      "page": 2,
+      "quote": "Apply on the National Scholarship Portal or the state scholarship portal"
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "post_matric_sc.pdf",
+      "url": "https://socialwelfare.goa.gov.in/wp-content/uploads/2024/07/Guidelines-to-post-matric-scholaships-to-the-students-belonging-to-scheduled-castes-for-students-in-India-2020-2021-to-2025-26_0001.pdf",
+      "label": "Central MoSJE guidelines 2020-21 to 2025-26, copy hosted by Goa govt (socialjustice.gov.in copy not found)",
+      "downloaded": "2026-10-28",
+      "sha256": "d726e2c8a16dcf572b050a014df9551414781bdc8b0268e7f3fcd5374a2c9f22"
+    }
+  ]
+}

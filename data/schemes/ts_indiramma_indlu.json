@@ -1,0 +1,97 @@
+{
+  "scheme_id": "ts_indiramma_indlu",
+  "version": "2025-01",
+  "doc": "ts_indiramma_indlu.md",
+  "name": {
+    "en": "Indiramma Indlu",
+    "hi": "इंदिरम्मा इंडलू (आवास)",
+    "te": "ఇందిరమ్మ ఇళ్లు"
+  },
+  "tagline": {
+    "en": "₹5 lakh to build your own house",
+    "hi": "अपना घर बनाने के लिए ₹5 लाख",
+    "te": "సొంత ఇల్లు కట్టుకోవడానికి ₹5 లక్షలు"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "housing"
+  ],
+  "official_url": "https://indirammaindlu.telangana.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_indiramma_indlu.md",
+        "page": 1,
+        "quote": "The family must reside in Telangana and hold a white ration card."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_indiramma_indlu.md",
+        "page": 1,
+        "quote": "The family must reside in Telangana and hold a white ration card."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "owns_pucca_house",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "ts_indiramma_indlu.md",
+        "page": 1,
+        "quote": "The family must not own a pucca house anywhere."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "₹5,00,000 in stages as the house is built",
+      "hi": "निर्माण के चरणों में ₹5,00,000",
+      "te": "నిర్మాణ దశలవారీగా ₹5,00,000"
+    },
+    "amount": 500000,
+    "unit": {
+      "en": "one time",
+      "hi": "एकमुश्त",
+      "te": "ఒకేసారి"
+    },
+    "source": {
+      "doc": "ts_indiramma_indlu.md",
+      "page": 2,
+      "quote": "Financial assistance of ₹5,00,000 is given to build a house, released in stages as construction progresses."
+    }
+  },
+  "documents_required": [
+    "ration_card",
+    "aadhaar",
+    "site_document",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply via Praja Palana or the Indiramma Indlu survey; lists are approved in the Gram / Ward Sabha.",
+      "hi": "प्रजा पालना या इंदिरम्मा इंडलू सर्वे से आवेदन; सूची ग्राम / वार्ड सभा में मंज़ूर होती है।",
+      "te": "ప్రజా పాలన లేదా ఇందిరమ్మ ఇళ్ల సర్వే ద్వారా దరఖాస్తు; జాబితాను గ్రామ / వార్డు సభ ఆమోదిస్తుంది."
+    },
+    "source": {
+      "doc": "ts_indiramma_indlu.md",
+      "page": 2,
+      "quote": "Apply through the Praja Palana application or the Indiramma Indlu app survey conducted in your village or ward."
+    }
+  }
+}

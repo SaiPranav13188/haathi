@@ -1,0 +1,71 @@
+{
+  "scheme_id": "sukanya_samriddhi",
+  "version": "2024-01",
+  "doc": "sukanya_samriddhi.md",
+  "name": {
+    "en": "Sukanya Samriddhi Yojana",
+    "hi": "सुकन्या समृद्धि योजना",
+    "te": "సుకన్య సమృద్ధి యోజన"
+  },
+  "tagline": {
+    "en": "High-interest savings for a daughter under 10",
+    "hi": "10 साल से कम उम्र की बेटी के लिए ऊँचे ब्याज वाली बचत",
+    "te": "10 ఏళ్ల లోపు కూతురి కోసం ఎక్కువ వడ్డీ పొదుపు"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "women",
+    "savings"
+  ],
+  "official_url": "https://www.nsiindia.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "has_daughter_under_10",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "sukanya_samriddhi.md",
+        "page": 1,
+        "quote": "A parent or legal guardian can open the account in the name of a girl child who is below 10 years of age."
+      }
+    }
+  ],
+  "logic": "r1",
+  "benefit": {
+    "summary": {
+      "en": "Save ₹250 to ₹1,50,000 a year with tax benefits",
+      "hi": "कर लाभ के साथ सालाना ₹250 से ₹1,50,000 तक बचत",
+      "te": "పన్ను ప్రయోజనాలతో ఏటా ₹250 నుండి ₹1,50,000 వరకు పొదుపు"
+    },
+    "amount": null,
+    "unit": null,
+    "source": {
+      "doc": "sukanya_samriddhi.md",
+      "page": 2,
+      "quote": "Minimum deposit of ₹250 and maximum deposit of ₹1,50,000 per financial year"
+    }
+  },
+  "documents_required": [
+    "birth_certificate",
+    "aadhaar",
+    "address_proof"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Open the account at any post office or authorised bank.",
+      "hi": "किसी भी डाकघर या अधिकृत बैंक में खाता खोलें।",
+      "te": "ఏ పోస్టాఫీసులోనైనా లేదా అధీకృత బ్యాంకులో ఖాతా తెరవండి."
+    },
+    "source": {
+      "doc": "sukanya_samriddhi.md",
+      "page": 2,
+      "quote": "Open the account at any post office or authorised bank branch."
+    }
+  }
+}

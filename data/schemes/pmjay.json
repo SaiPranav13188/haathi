@@ -1,0 +1,89 @@
+{
+  "scheme_id": "pmjay",
+  "version": "2024-10",
+  "doc": "pmjay.md",
+  "name": {
+    "en": "Ayushman Bharat PM-JAY",
+    "hi": "आयुष्मान भारत PM-JAY",
+    "te": "ఆయుష్మాన్ భారత్ PM-JAY"
+  },
+  "tagline": {
+    "en": "₹5 lakh health cover per family",
+    "hi": "प्रति परिवार ₹5 लाख स्वास्थ्य कवर",
+    "te": "కుటుంబానికి ₹5 లక్షల ఆరోగ్య బీమా"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "health",
+    "seniors"
+  ],
+  "official_url": "https://pmjay.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": "2024-10-29",
+  "change_note": {
+    "en": "All citizens aged 70+ now covered irrespective of income (Ayushman Vay Vandana).",
+    "hi": "70+ उम्र के सभी नागरिक अब आय की परवाह किए बिना शामिल (आयुष्मान वय वंदना)।",
+    "te": "70 ఏళ్లు పైబడిన పౌరులందరికీ ఆదాయంతో సంబంధం లేకుండా వర్తింపు (ఆయుష్మాన్ వయ వందన)."
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "pmjay.md",
+        "page": 1,
+        "quote": "Families identified as poor and vulnerable under the SECC 2011 deprivation criteria and families with priority ration cards are covered."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "age",
+      "op": "gte",
+      "value": 70,
+      "source": {
+        "doc": "pmjay.md",
+        "page": 1,
+        "quote": "All senior citizens aged 70 years and above are eligible irrespective of income"
+      }
+    }
+  ],
+  "logic": "r1 OR r2",
+  "benefit": {
+    "summary": {
+      "en": "₹5,00,000 per family per year, cashless",
+      "hi": "प्रति परिवार प्रति वर्ष ₹5,00,000, कैशलेस",
+      "te": "కుటుంబానికి ఏటా ₹5,00,000, నగదు రహితం"
+    },
+    "amount": 500000,
+    "unit": {
+      "en": "per family / year",
+      "hi": "प्रति परिवार / वर्ष",
+      "te": "కుటుంబానికి / ఏటా"
+    },
+    "source": {
+      "doc": "pmjay.md",
+      "page": 2,
+      "quote": "Health cover of ₹5,00,000 per family per year for hospitalisation"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "ration_card"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Check your name on the PM-JAY portal / Ayushman app and get your Ayushman card at a CSC or hospital.",
+      "hi": "PM-JAY पोर्टल / आयुष्मान ऐप पर नाम देखें और CSC या अस्पताल में आयुष्मान कार्ड बनवाएँ।",
+      "te": "PM-JAY పోర్టల్ / ఆయుష్మాన్ యాప్‌లో పేరు చూసుకుని, CSC లేదా ఆసుపత్రిలో ఆయుష్మాన్ కార్డు పొందండి."
+    },
+    "source": {
+      "doc": "pmjay.md",
+      "page": 2,
+      "quote": "Check your name on the PM-JAY beneficiary portal or the Ayushman app"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "scheme_id": "ts_aasara_pension_extracted",
+  "version": "extracted",
+  "doc": "ts_aasara_pension.pdf",
+  "name": {
+    "en": "Aasara Pensions"
+  },
+  "tagline": {
+    "en": "Monthly pension of Rs. 2016/- for eligible categories (Old Age, Widow, Weavers, Toddy Tappers, HIV-AIDS, Beedi Workers, Single Women, Filaria Patients) and Rs. 3016/- for Disabled persons under Aasara Scheme."
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "seniors"
+  ],
+  "official_url": "goir.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_aasara_pension.pdf",
+        "page": 1,
+        "quote": "GOVERNMENT OF TELANGANA ABSTRACT Social Security Pensions - Aasara Pensions - Social Safety Net Strategy - Enhancement of financial assistance under Aasara Scheme for the persons who are Old & infirm, Widows, Differently Abled, Weavers, Toddy Tappers, HIV-AIDS patients, Beedi Workers, Single Women and Filaria Patients - Orders - Issued."
+      }
+    }
+  ],
+  "logic": "r1",
+  "benefit": {
+    "summary": {
+      "en": "Monthly pension of Rs. 2016/- for eligible categories (Old Age, Widow, Weavers, Toddy Tappers, HIV-AIDS, Beedi Workers, Single Women, Filaria Patients) and Rs. 3016/- for Disabled persons under Aasara Scheme."
+    },
+    "amount": 24192,
+    "source": {
+      "doc": "ts_aasara_pension.pdf",
+      "page": 1,
+      "quote": "Enhanced monthly Pension under Aasara Scheme w.e.f. June, 2019 payable in July, 2019 (Rs.): 2016/-"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply through the District Collectors, DRDOs, MPDOs, or Municipal Commissioners in the State as per the operational guidelines of the Aasara Scheme."
+    },
+    "source": {
+      "doc": "ts_aasara_pension.pdf",
+      "page": 2,
+      "quote": "The District Collectors of all Districts. The DRDOs, DRDA/ Project Directors, ITDA. All Municipal Commissioners. All MPDOs in the State."
+    }
+  },
+  "extraction": {
+    "rules_kept": 1,
+    "rules_rejected_no_quote": 0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "haathi-goir",
+  "private": true,
+  "type": "module",
+  "description": "Find and download Telangana Government Orders from goir.telangana.gov.in (robots.txt: Allow /)",
+  "scripts": { "search": "node search.mjs", "download": "node download.mjs" },
+  "dependencies": { "playwright": "^1.50.0" }
+}

@@ -1,0 +1,105 @@
+{
+  "scheme_id": "pm_ujjwala",
+  "version": "2024-03",
+  "doc": "pm_ujjwala.md",
+  "name": {
+    "en": "PM Ujjwala Yojana",
+    "hi": "प्रधानमंत्री उज्ज्वला योजना",
+    "te": "ప్రధానమంత్రి ఉజ్వల యోజన"
+  },
+  "tagline": {
+    "en": "Free LPG connection for women of poor households",
+    "hi": "गरीब परिवारों की महिलाओं को मुफ़्त एलपीजी कनेक्शन",
+    "te": "పేద కుటుంబాల మహిళలకు ఉచిత LPG కనెక్షన్"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "women",
+    "households"
+  ],
+  "official_url": "https://www.pmuy.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "gender",
+      "op": "eq",
+      "value": "female",
+      "source": {
+        "doc": "pm_ujjwala.md",
+        "page": 1,
+        "quote": "The applicant must be a woman who has completed 18 years of age."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "age",
+      "op": "gte",
+      "value": 18,
+      "source": {
+        "doc": "pm_ujjwala.md",
+        "page": 1,
+        "quote": "The applicant must be a woman who has completed 18 years of age."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "pm_ujjwala.md",
+        "page": 1,
+        "quote": "The applicant must belong to a poor household, such as a household holding a BPL or priority ration card."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "has_lpg_connection",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pm_ujjwala.md",
+        "page": 1,
+        "quote": "There should not be any other LPG connection in the same household."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4",
+  "benefit": {
+    "summary": {
+      "en": "Deposit-free LPG connection + free first refill and stove",
+      "hi": "बिना जमा राशि एलपीजी कनेक्शन + पहला रिफिल और चूल्हा मुफ़्त",
+      "te": "డిపాజిట్ లేని LPG కనెక్షన్ + మొదటి రీఫిల్, స్టవ్ ఉచితం"
+    },
+    "amount": null,
+    "unit": null,
+    "source": {
+      "doc": "pm_ujjwala.md",
+      "page": 2,
+      "quote": "A deposit-free LPG connection with the first refill and stove free of cost"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "ration_card",
+    "bank_passbook",
+    "photo"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply on the PMUY portal or at the nearest LPG distributor.",
+      "hi": "PMUY पोर्टल या नज़दीकी एलपीजी वितरक पर आवेदन करें।",
+      "te": "PMUY పోర్టల్‌లో లేదా దగ్గరి LPG డిస్ట్రిబ్యూటర్ వద్ద దరఖాస్తు చేయండి."
+    },
+    "source": {
+      "doc": "pm_ujjwala.md",
+      "page": 2,
+      "quote": "Apply online on the PMUY portal or visit the nearest LPG distributor with your documents."
+    }
+  }
+}

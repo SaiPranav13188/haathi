@@ -1,0 +1,73 @@
+{
+  "scheme_id": "ts_mahalakshmi_lpg_extracted",
+  "version": "extracted",
+  "doc": "ts_mahalakshmi_lpg.pdf",
+  "name": {
+    "en": "Mahalakshmi LPG 500"
+  },
+  "tagline": {
+    "en": "Supply of LPG Domestic Cylinder at a subsidized rate of Rs.500/- per refill"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "women"
+  ],
+  "official_url": "goir.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_mahalakshmi_lpg.pdf",
+        "page": 1,
+        "quote": "They should be White Ration Card (FSC) holders in Telangana."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "has_lpg_connection",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_mahalakshmi_lpg.pdf",
+        "page": 1,
+        "quote": "They should have active domestic LPG connection in their name."
+      }
+    }
+  ],
+  "logic": "r1 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "Supply of LPG Domestic Cylinder at a subsidized rate of Rs.500/- per refill"
+    },
+    "amount": null,
+    "source": {
+      "doc": "ts_mahalakshmi_lpg.pdf",
+      "page": 1,
+      "quote": "Supply of LPG Domestic Cylinder at a subsidized rate of Rs.500/- per refill, to the White Ration Card (Food Security Card) holders in the State of Telangana."
+    }
+  },
+  "documents_required": [
+    "white_ration_card",
+    "lpg_connection"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Applied for subsidized cylinder through Praja Palana application."
+    },
+    "source": {
+      "doc": "ts_mahalakshmi_lpg.pdf",
+      "page": 1,
+      "quote": "They should have applied for subsidized cylinder through Praja Palana application."
+    }
+  },
+  "extraction": {
+    "rules_kept": 2,
+    "rules_rejected_no_quote": 1
+  }
+}

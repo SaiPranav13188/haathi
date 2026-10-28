@@ -1,0 +1,32 @@
+scheme_id,name,state,category,url,doc_type,notes
+ts_rythu_bharosa,Rythu Bharosa,Telangana,farmers,https://rythubharosa.telangana.gov.in,portal,"NEEDS PDF: No official G.O. PDF online (guidelines issued in Telugu, Jan 2025); keep seed summary"
+ts_indiramma_atmiya_bharosa,Indiramma Atmiya Bharosa,Telangana,farmers,https://www.telangana.gov.in,portal,NEEDS PDF: G.O. not found online
+ts_rythu_bima,Rythu Bima,Telangana,farmers,https://agri.telangana.gov.in,portal,"NEEDS PDF: No guidelines PDF found. Telangana Today 4 Oct 2026: scheme stopped Sept 2026, premium unpaid"
+ts_kalyana_lakshmi,Kalyana Lakshmi,Telangana,women,https://goir.telangana.gov.in,goir,G.O.Ms.No.14 (BCW) dated 06/07/2017 from goir.telangana.gov.in (downloaded via the portal search form)
+ts_shaadi_mubarak,Shaadi Mubarak,Telangana,women,https://goir.telangana.gov.in,goir,Same G.O.s as Kalyana Lakshmi (BCW G.O.Ms.No.14/2017 and No.8/2018 cover Shaadi Mubarak too)
+ts_aasara_pension,Aasara Pensions,Telangana,seniors,https://goir.telangana.gov.in,goir,G.O.Ms.No.34 (PR) dated 28/05/2019 from goir.telangana.gov.in (downloaded via the portal search form)
+ts_gruha_jyothi,Gruha Jyothi,Telangana,households,https://www.tgsouthernpower.org,portal,NEEDS PDF: G.O. not found online
+ts_mahalakshmi_bus,Mahalakshmi free bus,Telangana,women,https://goir.telangana.gov.in,goir,G.O.Ms.No.47 (TRB) dated 08/12/2023 from goir.telangana.gov.in (downloaded via the portal search form)
+ts_mahalakshmi_lpg,Mahalakshmi LPG 500,Telangana,women,https://goir.telangana.gov.in,goir,G.O.Ms.No.2 (FCS) dated 27/02/2024 from goir.telangana.gov.in (downloaded via the portal search form)
+ts_indiramma_indlu,Indiramma Indlu,Telangana,housing,https://indirammaindlu.telangana.gov.in,portal,NEEDS PDF: G.O. not found online; portal cgg.gov.in
+ts_aarogyasri,Rajiv Aarogyasri,Telangana,health,https://www.aarogyasri.telangana.gov.in,portal,NEEDS PDF: G.O. for 10 lakh cover (Dec 2023) not found online
+ts_epass_post_matric,ePASS Post-Matric Scholarship,Telangana,students,https://goir.telangana.gov.in,goir,G.O.Ms.No.18 (SW) dated 29/09/2022 from goir.telangana.gov.in (downloaded via the portal search form)
+pm_kisan,PM-KISAN,,farmers,https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines(English).pdf,pdf,"Official operational guidelines (revised 29.03.2020), pmkisan.gov.in"
+pmfby,PM Fasal Bima Yojana,,farmers,https://pmfby.gov.in/pdf/Revamped%20Operational%20Guidelines_17th%20August%202020.pdf,pdf,"Official revamped operational guidelines (Kharif 2020), pmfby.gov.in, 9.9 MB"
+kcc,Kisan Credit Card,,farmers,https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13270,html,RBI circular: Modified Interest Subvention Scheme FY 2025-26 (13 Jan 2026)
+pmay_g,PMAY-Gramin,,housing,https://pmayg.nic.in,portal,NEEDS PDF: Framework for Implementation (Nov 2016) not found as a direct PDF
+pmay_u,PMAY-Urban 2.0,,housing,https://pmay-urban.gov.in/uploads/guidelines/Operational-Guidelines-of-PMAY-U-2.pdf,pdf,Official PMAY-U 2.0 operational guidelines (Sept 2024)
+pmjay,Ayushman Bharat PM-JAY,,health,https://pmjay.gov.in,portal,NEEDS PDF: Guidelines PDF not found in search
+pm_ujjwala,PM Ujjwala Yojana,,women,https://www.pmuy.gov.in,portal,NEEDS PDF: Ujjwala 2.0 guidelines PDF not found; mopng.gov.in has an HTML page
+sukanya_samriddhi,Sukanya Samriddhi Yojana,,savings,https://www.nsiindia.gov.in,portal,NEEDS PDF: 2019 Gazette notification only on third-party sites
+apy,Atal Pension Yojana,,pension,https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551701.pdf,pdf,PIB official fact sheet (May 2025)
+pmjjby,PMJJBY,,insurance,https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551501.pdf,pdf,PIB official fact sheet (May 2025); full rules at jansuraksha.gov.in were unreachable
+pmsby,PMSBY,,insurance,https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551401.pdf,pdf,PIB official fact sheet (May 2025); full rules at jansuraksha.gov.in were unreachable
+pm_sym,PM Shram Yogi Maan-dhan,,workers,https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/mar/doc202534512301.pdf,pdf,"PIB official fact sheet, Ministry of Labour (Mar 2025)"
+ignoaps,IGNOAPS,,seniors,https://nsap.nic.in,portal,NEEDS PDF: NSAP guidelines PDF not found on nsap.nic.in
+post_matric_sc,Post-Matric Scholarship SC,,students,https://socialwelfare.goa.gov.in/wp-content/uploads/2024/07/Guidelines-to-post-matric-scholaships-to-the-students-belonging-to-scheduled-castes-for-students-in-India-2020-2021-to-2025-26_0001.pdf,pdf,"Central MoSJE guidelines 2020-21 to 2025-26, copy hosted by Goa govt (socialjustice.gov.in copy not found)"
+pm_vishwakarma,PM Vishwakarma,,workers,https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/sep/doc2023918253401.pdf,pdf,"PIB official backgrounder, Ministry of MSME (Sept 2023)"
+ap_annadata_sukhibhava,Annadata Sukhibhava,Andhra Pradesh,farmers,https://annadathasukhibhava.ap.gov.in,portal,"NEEDS PDF: Only the 2019 G.O. (older Rs 15,000 version) found; 2025 G.O. not found"
+ap_thalliki_vandanam,Thalliki Vandanam,Andhra Pradesh,students,https://gsws-nbm.ap.gov.in,portal,NEEDS PDF: Only a 2026-27 G.O.Ms.No.26 on a third-party site (govtschemes.in); official copy not found
+ap_ntr_bharosa_pension,NTR Bharosa Pensions,Andhra Pradesh,seniors,https://sspensions.ap.gov.in,portal,NEEDS PDF: G.O. not found online
+ts_kalyana_lakshmi_amount,Kalyana Lakshmi / Shaadi Mubarak amount,Telangana,women,https://goir.telangana.gov.in,goir,G.O.Ms.No.8 (BCW) dated 03/04/2018 from goir.telangana.gov.in (downloaded via the portal search form)

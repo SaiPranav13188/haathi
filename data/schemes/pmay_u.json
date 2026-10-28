@@ -1,0 +1,110 @@
+{
+  "scheme_id": "pmay_u",
+  "version": "2024-09",
+  "doc": "pmay_u.md",
+  "name": {
+    "en": "PM Awas Yojana – Urban 2.0",
+    "hi": "प्रधानमंत्री आवास योजना – शहरी 2.0",
+    "te": "ప్రధానమంత్రి ఆవాస్ యోజన – పట్టణ 2.0"
+  },
+  "tagline": {
+    "en": "Housing help for urban families earning up to ₹9 lakh",
+    "hi": "₹9 लाख तक आय वाले शहरी परिवारों को आवास सहायता",
+    "te": "₹9 లక్షల వరకు ఆదాయం ఉన్న పట్టణ కుటుంబాలకు గృహ సాయం"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "housing"
+  ],
+  "official_url": "https://pmay-urban.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": "2024-09-01",
+  "change_note": {
+    "en": "PMAY-U 2.0 launched; income ceiling now ₹9 lakh (MIG).",
+    "hi": "PMAY-U 2.0 शुरू; आय सीमा अब ₹9 लाख (MIG)।",
+    "te": "PMAY-U 2.0 ప్రారంభం; ఆదాయ పరిమితి ఇప్పుడు ₹9 లక్షలు (MIG)."
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "field": "area",
+      "op": "eq",
+      "value": "urban",
+      "source": {
+        "doc": "pmay_u.pdf",
+        "page": 17,
+        "quote": "Families belonging to EWS/LIG/MIG category, living in urban areas, having no pucca house anywhere in the country, are eligible to purchase or construct a house under PMAY-U 2.0."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "owns_pucca_house",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pmay_u.pdf",
+        "page": 17,
+        "quote": "Families belonging to EWS/LIG/MIG category, living in urban areas, having no pucca house anywhere in the country, are eligible to purchase or construct a house under PMAY-U 2.0."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 900000,
+      "source": {
+        "doc": "pmay_u.pdf",
+        "page": 17,
+        "quote": "EWS households are defined as households with an annual income of up to ₹3 lakh. LIG is defined as households with an annual income from ₹3 lakh up to ₹6 lakh. MIG is defined as households with an annual income from ₹6 lakh up to ₹9 lakh."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "Up to ₹2,50,000 central assistance per house",
+      "hi": "प्रति घर ₹2,50,000 तक केंद्रीय सहायता",
+      "te": "ఇంటికి ₹2,50,000 వరకు కేంద్ర సాయం"
+    },
+    "amount": 250000,
+    "unit": {
+      "en": "one time",
+      "hi": "एकमुश्त",
+      "te": "ఒకేసారి"
+    },
+    "source": {
+      "doc": "pmay_u.md",
+      "page": 2,
+      "quote": "Central assistance of ₹2,50,000 per unit for Beneficiary Led Construction and Affordable Housing in Partnership"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "income_certificate",
+    "bank_passbook",
+    "site_document"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply on the PMAY-U 2.0 portal or at your municipality office.",
+      "hi": "PMAY-U 2.0 पोर्टल या नगरपालिका कार्यालय में आवेदन करें।",
+      "te": "PMAY-U 2.0 పోర్టల్‌లో లేదా మీ మున్సిపల్ కార్యాలయంలో దరఖాస్తు చేయండి."
+    },
+    "source": {
+      "doc": "pmay_u.md",
+      "page": 2,
+      "quote": "Apply online on the PMAY-U 2.0 portal or at your Urban Local Body (municipality) office."
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "pmay_u.pdf",
+      "url": "https://pmay-urban.gov.in/uploads/guidelines/Operational-Guidelines-of-PMAY-U-2.pdf",
+      "label": "Official PMAY-U 2.0 operational guidelines (Sept 2024)",
+      "downloaded": "2026-10-28",
+      "sha256": "74c4f6724f6645f08463e9b09009edd3ddd720739bf2a13af0f4bf22fea4b0f3"
+    }
+  ]
+}

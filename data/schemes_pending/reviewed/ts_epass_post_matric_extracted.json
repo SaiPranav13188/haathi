@@ -1,0 +1,96 @@
+{
+  "scheme_id": "ts_epass_post_matric_extracted",
+  "version": "extracted",
+  "doc": "ts_epass_post_matric.pdf",
+  "name": {
+    "en": "ePASS Post-Matric Scholarship"
+  },
+  "tagline": {
+    "en": "Post Matric Scholarships (RTF & MTF) for SC, ST, and Minority students in rural areas with annual family income up to Rs. 2,00,000."
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "students"
+  ],
+  "official_url": "goir.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_epass_post_matric.pdf",
+        "page": 1,
+        "quote": "GOVERNMENT OF TELANGANA"
+      }
+    },
+    {
+      "id": "r2",
+      "field": "category",
+      "op": "in",
+      "value": [
+        "sc",
+        "st",
+        "minority"
+      ],
+      "source": {
+        "doc": "ts_epass_post_matric.pdf",
+        "page": 1,
+        "quote": "Enhancement of annual ceiling on family income from Rs.1.50 lakhs to Rs.2.00 lakhs to the Minority students in Rural areas on par with Scheduled Castes and Scheduled Tribes students for claiming the Post Matric Scholarships"
+      }
+    },
+    {
+      "id": "r3",
+      "field": "area",
+      "op": "eq",
+      "value": "rural",
+      "source": {
+        "doc": "ts_epass_post_matric.pdf",
+        "page": 1,
+        "quote": "Enhancement of annual ceiling on family income from Rs.1.50 lakhs to Rs.2.00 lakhs to the Minority students in Rural areas on par with Scheduled Castes and Scheduled Tribes students for claiming the Post Matric Scholarships"
+      }
+    },
+    {
+      "id": "r4",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 200000,
+      "source": {
+        "doc": "ts_epass_post_matric.pdf",
+        "page": 1,
+        "quote": "Enhancement of annual ceiling on family income from Rs.1.50 lakhs to Rs.2.00 lakhs to the Minority students in Rural areas on par with Scheduled Castes and Scheduled Tribes students for claiming the Post Matric Scholarships"
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4",
+  "benefit": {
+    "summary": {
+      "en": "Post Matric Scholarships (RTF & MTF) for SC, ST, and Minority students in rural areas with annual family income up to Rs. 2,00,000."
+    },
+    "amount": null,
+    "source": {
+      "doc": "ts_epass_post_matric.pdf",
+      "page": 1,
+      "quote": "claiming the Post Matric Scholarships (RTF & MTF)"
+    }
+  },
+  "documents_required": [],
+  "how_to_apply": {
+    "summary": {
+      "en": "Further necessary action to be taken by the Commissioner, Scheduled Caste Development Department and other respective welfare commissioners and directors."
+    },
+    "source": {
+      "doc": "ts_epass_post_matric.pdf",
+      "page": 1,
+      "quote": "shall take further necessary action accordingly."
+    }
+  },
+  "extraction": {
+    "rules_kept": 4,
+    "rules_rejected_no_quote": 0
+  }
+}

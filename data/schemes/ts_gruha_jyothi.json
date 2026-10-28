@@ -1,0 +1,81 @@
+{
+  "scheme_id": "ts_gruha_jyothi",
+  "version": "2024-03",
+  "doc": "ts_gruha_jyothi.md",
+  "name": {
+    "en": "Gruha Jyothi",
+    "hi": "गृह ज्योति",
+    "te": "గృహ జ్యోతి"
+  },
+  "tagline": {
+    "en": "Free electricity up to 200 units a month",
+    "hi": "हर महीने 200 यूनिट तक मुफ़्त बिजली",
+    "te": "నెలకు 200 యూనిట్ల వరకు ఉచిత విద్యుత్"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "households"
+  ],
+  "official_url": "https://www.tgsouthernpower.org",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_gruha_jyothi.md",
+        "page": 1,
+        "quote": "Domestic households in Telangana holding a white ration card (food security card) are eligible."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_gruha_jyothi.md",
+        "page": 1,
+        "quote": "Domestic households in Telangana holding a white ration card (food security card) are eligible."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "Zero bill up to 200 units per month",
+      "hi": "हर महीने 200 यूनिट तक बिल शून्य",
+      "te": "నెలకు 200 యూనిట్ల వరకు బిల్లు సున్నా"
+    },
+    "amount": null,
+    "unit": null,
+    "source": {
+      "doc": "ts_gruha_jyothi.md",
+      "page": 2,
+      "quote": "Free electricity for up to 200 units of consumption per month"
+    }
+  },
+  "documents_required": [
+    "ration_card",
+    "aadhaar",
+    "electricity_number"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Submit the Praja Palana application and link Aadhaar + ration card to your electricity service number.",
+      "hi": "प्रजा पालना आवेदन दें और आधार + राशन कार्ड को बिजली सेवा नंबर से जोड़ें।",
+      "te": "ప్రజా పాలన దరఖాస్తు ఇచ్చి, ఆధార్ + రేషన్ కార్డును మీ విద్యుత్ సర్వీస్ నంబర్‌కు లింక్ చేయండి."
+    },
+    "source": {
+      "doc": "ts_gruha_jyothi.md",
+      "page": 2,
+      "quote": "Submit the Praja Palana application at the Gram Sabha or ward office."
+    }
+  }
+}

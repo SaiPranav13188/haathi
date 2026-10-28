@@ -1,0 +1,105 @@
+{
+  "scheme_id": "ts_kalyana_lakshmi_amount_extracted",
+  "version": "extracted",
+  "doc": "ts_kalyana_lakshmi_amount.pdf",
+  "name": {
+    "en": "Kalyana Lakshmi / Shaadi Mubarak amount"
+  },
+  "tagline": {
+    "en": "One time financial assistance for marriage of brides belonging to SC, ST, Minorities, BC, and EBC communities in Telangana."
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "women"
+  ],
+  "official_url": "goir.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_kalyana_lakshmi_amount.pdf",
+        "page": 1,
+        "quote": "GOVERNMENT OF TELANGANA ABSTRACT Schemes - \"Kalyana Lakshmi Pathakam/Shaadi Mubaarak Scheme\" - Enhancement of financial assistance from Rs.75,116/- to Rs.1,00,116/- under the scheme \"Kalyana Lakshmi Pathakam/Shaadi Mubaarak Scheme\" w.e.f.01.04.2018 - Orders - Issued"
+      }
+    },
+    {
+      "id": "r2",
+      "field": "category",
+      "op": "in",
+      "value": [
+        "sc",
+        "st",
+        "minority",
+        "bc",
+        "ebc"
+      ],
+      "source": {
+        "doc": "ts_kalyana_lakshmi_amount.pdf",
+        "page": 1,
+        "quote": "to all the Scheduled Castes, Scheduled Tribes, Minorities, Backward Classes and Economically Backward Classes unmarried girl."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "gender",
+      "op": "eq",
+      "value": "female",
+      "source": {
+        "doc": "ts_kalyana_lakshmi_amount.pdf",
+        "page": 1,
+        "quote": "wherein one time financial assistance of Rs.51,000/- is given to every bride"
+      }
+    },
+    {
+      "id": "r4",
+      "field": "has_daughter_marrying",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_kalyana_lakshmi_amount.pdf",
+        "page": 1,
+        "quote": "wherein one time financial assistance of Rs.51,000/- is given to every bride of all Scheduled Castes, Scheduled Tribes, Minorities, Backward Classes and Economically Backward Classes on their marriage"
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4",
+  "benefit": {
+    "summary": {
+      "en": "One time financial assistance for marriage of brides belonging to SC, ST, Minorities, BC, and EBC communities in Telangana."
+    },
+    "amount": 100116,
+    "source": {
+      "doc": "ts_kalyana_lakshmi_amount.pdf",
+      "page": 1,
+      "quote": "enhance the financial assistance from Rs.75,116/- to Rs.1,00,116/- under the scheme \"Kalyana Lakshmi Pathakam / Shaadi Mubaarak Scheme\" w.e.f.01.04.2018 to all the Scheduled Castes, Scheduled Tribes, Minorities, Backward Classes and Economically Backward Classes unmarried girl."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "marriage_certificate",
+    "caste_certificate",
+    "income_certificate",
+    "birth_certificate",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Applications can be submitted through the Meeseva Centres or the official online portal as implemented by the Nodal Departments (BC Welfare Department, Scheduled Castes Development Department, Tribal Welfare Department, Minorities Welfare Department)."
+    },
+    "source": {
+      "doc": "ts_kalyana_lakshmi_amount.pdf",
+      "page": 2,
+      "quote": "The Director, Meeseva Centre, Hyderabad"
+    }
+  },
+  "extraction": {
+    "rules_kept": 4,
+    "rules_rejected_no_quote": 0
+  }
+}

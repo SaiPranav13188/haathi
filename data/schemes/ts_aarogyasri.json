@@ -1,0 +1,88 @@
+{
+  "scheme_id": "ts_aarogyasri",
+  "version": "2023-12",
+  "doc": "ts_aarogyasri.md",
+  "name": {
+    "en": "Rajiv Aarogyasri",
+    "hi": "राजीव आरोग्यश्री",
+    "te": "రాజీవ్ ఆరోగ్యశ్రీ"
+  },
+  "tagline": {
+    "en": "Cashless treatment up to ₹10 lakh a year",
+    "hi": "सालाना ₹10 लाख तक कैशलेस इलाज",
+    "te": "ఏటా ₹10 లక్షల వరకు నగదు రహిత వైద్యం"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "health"
+  ],
+  "official_url": "https://www.aarogyasri.telangana.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": "2023-12-09",
+  "change_note": {
+    "en": "Cover raised from ₹5 lakh to ₹10 lakh per family per year.",
+    "hi": "कवर ₹5 लाख से बढ़कर ₹10 लाख प्रति परिवार प्रति वर्ष।",
+    "te": "కవరేజీ కుటుంబానికి ఏటా ₹5 లక్షల నుండి ₹10 లక్షలకు పెరిగింది."
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_aarogyasri.md",
+        "page": 1,
+        "quote": "Families in Telangana holding a white ration card (food security card) are eligible."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "has_ration_card",
+      "op": "eq",
+      "value": true,
+      "source": {
+        "doc": "ts_aarogyasri.md",
+        "page": 1,
+        "quote": "Families in Telangana holding a white ration card (food security card) are eligible."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "Cashless treatment up to ₹10,00,000 per family per year",
+      "hi": "प्रति परिवार प्रति वर्ष ₹10,00,000 तक कैशलेस इलाज",
+      "te": "కుటుంబానికి ఏటా ₹10,00,000 వరకు నగదు రహిత వైద్యం"
+    },
+    "amount": 1000000,
+    "unit": {
+      "en": "per family / year",
+      "hi": "प्रति परिवार / वर्ष",
+      "te": "కుటుంబానికి / ఏటా"
+    },
+    "source": {
+      "doc": "ts_aarogyasri.md",
+      "page": 2,
+      "quote": "Cashless treatment up to ₹10,00,000 per family per year for listed procedures"
+    }
+  },
+  "documents_required": [
+    "ration_card",
+    "aadhaar"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Go to the Aarogyamithra desk at any network hospital with your white ration card and Aadhaar.",
+      "hi": "किसी भी नेटवर्क अस्पताल के आरोग्यमित्र डेस्क पर सफ़ेद राशन कार्ड और आधार के साथ जाएँ।",
+      "te": "ఏ నెట్‌వర్క్ ఆసుపత్రిలోనైనా ఆరోగ్యమిత్ర డెస్క్‌కు తెల్ల రేషన్ కార్డు, ఆధార్‌తో వెళ్లండి."
+    },
+    "source": {
+      "doc": "ts_aarogyasri.md",
+      "page": 2,
+      "quote": "Visit the Aarogyamithra help desk at any network hospital with your white ration card and Aadhaar card."
+    }
+  }
+}

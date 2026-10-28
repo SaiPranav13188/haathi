@@ -1,0 +1,151 @@
+{
+  "scheme_id": "ts_aasara_pension",
+  "version": "2024-01",
+  "doc": "ts_aasara_pension.md",
+  "name": {
+    "en": "Aasara Old Age Pension",
+    "hi": "आसरा वृद्धावस्था पेंशन",
+    "te": "ఆసరా వృద్ధాప్య పింఛను"
+  },
+  "tagline": {
+    "en": "₹2,016 every month for elders aged 57+",
+    "hi": "57+ उम्र के बुज़ुर्गों को हर महीने ₹2,016",
+    "te": "57 ఏళ్లు పైబడిన వృద్ధులకు నెలకు ₹2,016"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "seniors"
+  ],
+  "official_url": "https://www.aasara.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "age",
+      "op": "gte",
+      "value": 57,
+      "source": {
+        "doc": "ts_aasara_pension.md",
+        "page": 1,
+        "quote": "Old age pension is given to persons who have completed 57 years of age and reside in Telangana."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_aasara_pension.md",
+        "page": 1,
+        "quote": "Old age pension is given to persons who have completed 57 years of age and reside in Telangana."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "area",
+      "op": "eq",
+      "value": "rural",
+      "source": {
+        "doc": "ts_aasara_pension.md",
+        "page": 1,
+        "quote": "The annual family income should not exceed ₹1,50,000 in rural areas."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 150000,
+      "source": {
+        "doc": "ts_aasara_pension.md",
+        "page": 1,
+        "quote": "The annual family income should not exceed ₹1,50,000 in rural areas."
+      }
+    },
+    {
+      "id": "r5",
+      "field": "area",
+      "op": "eq",
+      "value": "urban",
+      "source": {
+        "doc": "ts_aasara_pension.md",
+        "page": 1,
+        "quote": "The annual family income should not exceed ₹2,00,000 in urban areas."
+      }
+    },
+    {
+      "id": "r6",
+      "field": "annual_income",
+      "op": "lte",
+      "value": 200000,
+      "source": {
+        "doc": "ts_aasara_pension.md",
+        "page": 1,
+        "quote": "The annual family income should not exceed ₹2,00,000 in urban areas."
+      }
+    },
+    {
+      "id": "r7",
+      "field": "is_govt_employee",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "ts_aasara_pension.md",
+        "page": 1,
+        "quote": "Persons who are government employees or pensioners are not eligible."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r7 AND ((r3 AND r4) OR (r5 AND r6))",
+  "benefit": {
+    "summary": {
+      "en": "₹2,016 per month",
+      "hi": "₹2,016 प्रति माह",
+      "te": "నెలకు ₹2,016"
+    },
+    "amount": 2016,
+    "unit": {
+      "en": "per month",
+      "hi": "प्रति माह",
+      "te": "నెలకు"
+    },
+    "source": {
+      "doc": "ts_aasara_pension.pdf",
+      "page": 1,
+      "quote": "Enhanced monthly Pension under Aasara Scheme w.e.f. June, 2019 payable in July, 2019 (Rs.): 2016/-"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "age_proof",
+    "income_certificate",
+    "bank_passbook",
+    "ration_card"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Apply at the Gram Panchayat (rural) or Municipal office (urban).",
+      "hi": "ग्राम पंचायत (ग्रामीण) या नगरपालिका कार्यालय (शहरी) में आवेदन करें।",
+      "te": "గ్రామ పంచాయతీ (గ్రామీణ) లేదా మున్సిపల్ కార్యాలయం (పట్టణ)లో దరఖాస్తు చేయండి."
+    },
+    "source": {
+      "doc": "ts_aasara_pension.md",
+      "page": 2,
+      "quote": "Apply at the Gram Panchayat office (rural) or the Municipal office (urban)."
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "ts_aasara_pension.pdf",
+      "url": "https://goir.telangana.gov.in",
+      "label": "G.O.Ms.No.34 (PR), 28/05/2019",
+      "downloaded": "2026-10-28",
+      "sha256": "0b4ba594ab6bd235f438f9a8113c1123647985eb0e47efc89b167fd26dc46462"
+    }
+  ]
+}

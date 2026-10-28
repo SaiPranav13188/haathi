@@ -1,0 +1,118 @@
+{
+  "scheme_id": "ts_rythu_bima",
+  "version": "2024-08",
+  "doc": "ts_rythu_bima.md",
+  "name": {
+    "en": "Rythu Bima",
+    "hi": "रैतु बीमा",
+    "te": "రైతు బీమా"
+  },
+  "tagline": {
+    "en": "₹5 lakh life insurance for farmers, premium paid by govt",
+    "hi": "किसानों के लिए ₹5 लाख जीवन बीमा, प्रीमियम सरकार देती है",
+    "te": "రైతులకు ₹5 లక్షల జీవిత బీమా, ప్రీమియం ప్రభుత్వమే చెల్లిస్తుంది"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "farmers",
+    "insurance"
+  ],
+  "official_url": "https://agri.telangana.gov.in",
+  "last_verified": "2025-10-01",
+  "review_status": "seed",
+  "changed_on": "2026-09",
+  "change_note": {
+    "en": "News reports (Telangana Today, 4 Oct 2026) say the state stopped Rythu Bima in September 2026 after the LIC premium was not paid. Check with your Agriculture Extension Officer before relying on it.",
+    "hi": "समाचार रिपोर्टों (तेलंगाना टुडे, 4 अक्टूबर 2026) के अनुसार LIC प्रीमियम न भरने से राज्य ने सितंबर 2026 में रैतु बीमा बंद कर दिया। भरोसा करने से पहले अपने कृषि विस्तार अधिकारी से पुष्टि करें।",
+    "te": "వార్తా నివేదికల (తెలంగాణ టుడే, 4 అక్టోబర్ 2026) ప్రకారం LIC ప్రీమియం చెల్లించకపోవడంతో రాష్ట్రం సెప్టెంబర్ 2026లో రైతు బీమాను నిలిపివేసింది. ఆధారపడే ముందు మీ వ్యవసాయ విస్తరణ అధికారిని సంప్రదించండి."
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "farmer"
+      ],
+      "source": {
+        "doc": "ts_rythu_bima.md",
+        "page": 1,
+        "quote": "Farmers who own agricultural land (pattadars) in Telangana are covered."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "land_acres",
+      "op": "gt",
+      "value": 0,
+      "source": {
+        "doc": "ts_rythu_bima.md",
+        "page": 1,
+        "quote": "Farmers who own agricultural land (pattadars) in Telangana are covered."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "age",
+      "op": "between",
+      "value": [
+        18,
+        59
+      ],
+      "source": {
+        "doc": "ts_rythu_bima.md",
+        "page": 1,
+        "quote": "The farmer must be aged between 18 and 59 years at the time of enrolment."
+      }
+    },
+    {
+      "id": "r4",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_rythu_bima.md",
+        "page": 1,
+        "quote": "Farmers who own agricultural land (pattadars) in Telangana are covered."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3 AND r4",
+  "benefit": {
+    "summary": {
+      "en": "₹5,00,000 to the nominee; premium fully paid by the State",
+      "hi": "नामांकित व्यक्ति को ₹5,00,000; पूरा प्रीमियम राज्य देता है",
+      "te": "నామినీకి ₹5,00,000; ప్రీమియం మొత్తం రాష్ట్ర ప్రభుత్వమే చెల్లిస్తుంది"
+    },
+    "amount": 500000,
+    "unit": {
+      "en": "cover",
+      "hi": "बीमा राशि",
+      "te": "బీమా మొత్తం"
+    },
+    "source": {
+      "doc": "ts_rythu_bima.md",
+      "page": 2,
+      "quote": "An insurance cover of ₹5,00,000 is paid to the nominee within 10 days of the death of the farmer."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "land_record",
+    "nominee_aadhaar",
+    "bank_passbook"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Give the enrolment form with nominee details to your cluster AEO. Renewed every August.",
+      "hi": "नामांकित व्यक्ति के विवरण के साथ फॉर्म अपने क्लस्टर AEO को दें। हर अगस्त नवीनीकरण।",
+      "te": "నామినీ వివరాలతో నమోదు ఫారాన్ని మీ క్లస్టర్ AEOకి ఇవ్వండి. ప్రతి ఆగస్టులో పునరుద్ధరణ."
+    },
+    "source": {
+      "doc": "ts_rythu_bima.md",
+      "page": 2,
+      "quote": "Submit the enrolment form with nominee details to the Agriculture Extension Officer (AEO) of your cluster."
+    }
+  }
+}

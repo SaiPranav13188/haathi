@@ -1,0 +1,63 @@
+{
+  "scheme_id": "pmfby_extracted",
+  "version": "extracted",
+  "doc": "pmfby.pdf",
+  "name": {
+    "en": "PM Fasal Bima Yojana"
+  },
+  "tagline": {
+    "en": "Providing financial support to farmers suffering crop loss/damage arising out of unforeseen events and stabilizing their income."
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "farmers"
+  ],
+  "official_url": "https://pmfby.gov.in/pdf/Revamped%20Operational%20Guidelines_17th%20August%202020.pdf",
+  "last_verified": "2026-10-28",
+  "review_status": "pending",
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "eq",
+      "value": "farmer",
+      "source": {
+        "doc": "pmfby.pdf",
+        "page": 13,
+        "quote": "All farmers including sharecroppers and tenant farmers growing the notified crops in the notified areas are eligible for coverage."
+      }
+    }
+  ],
+  "logic": "r1",
+  "benefit": {
+    "summary": {
+      "en": "Providing financial support to farmers suffering crop loss/damage arising out of unforeseen events and stabilizing their income."
+    },
+    "amount": null,
+    "source": {
+      "doc": "pmfby.pdf",
+      "page": 10,
+      "quote": "Providing financial support to farmers suffering crop loss/damage arising out of unforeseen events."
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "land_records",
+    "sowing_declaration"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Farmers can enroll through banks, Primary Agricultural Credit Societies (PACS), Common Service Centres (CSCs), or online via the National Crop Insurance Portal (NCIP) by submitting required documents, Aadhaar, and crop declaration before the cut-off date."
+    },
+    "source": {
+      "doc": "pmfby.pdf",
+      "page": 11,
+      "quote": "Only those farmers whose data is uploaded on the NCIP and their share of premium has been remitted to the concerned IC within the prescribed time limit, shall be eligible for Insurance coverage."
+    }
+  },
+  "extraction": {
+    "rules_kept": 1,
+    "rules_rejected_no_quote": 0
+  }
+}

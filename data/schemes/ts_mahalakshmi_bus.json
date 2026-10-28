@@ -1,0 +1,91 @@
+{
+  "scheme_id": "ts_mahalakshmi_bus",
+  "version": "2023-12",
+  "doc": "ts_mahalakshmi_bus.md",
+  "name": {
+    "en": "Mahalakshmi Free Bus Travel",
+    "hi": "महालक्ष्मी मुफ़्त बस यात्रा",
+    "te": "మహాలక్ష్మి ఉచిత బస్సు ప్రయాణం"
+  },
+  "tagline": {
+    "en": "Free TGSRTC bus travel for women in Telangana",
+    "hi": "तेलंगाना में महिलाओं के लिए TGSRTC बसों में मुफ़्त यात्रा",
+    "te": "తెలంగాణలో మహిళలకు TGSRTC బస్సుల్లో ఉచిత ప్రయాణం"
+  },
+  "level": "state",
+  "state": "Telangana",
+  "categories": [
+    "women"
+  ],
+  "official_url": "https://www.tgsrtc.telangana.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "edited",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "gender",
+      "op": "in",
+      "value": [
+        "female",
+        "transgender"
+      ],
+      "source": {
+        "doc": "ts_mahalakshmi_bus.pdf",
+        "page": 1,
+        "quote": "The Scheme is for the benefit of girls and women of all age groups and transgender persons who are domiciled in Telangana."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "state",
+      "op": "eq",
+      "value": "Telangana",
+      "source": {
+        "doc": "ts_mahalakshmi_bus.pdf",
+        "page": 1,
+        "quote": "The Government of Telangana hereby launch the \"6 Guarantees - Maha Lakshmi\" scheme, under which girls and women of all age groups and transgender persons who are domicile of Telangana shall freely travel in the Telangana State Road Transport Corporation run buses."
+      }
+    }
+  ],
+  "logic": "r1 AND r2",
+  "benefit": {
+    "summary": {
+      "en": "Zero-fare tickets, unlimited trips within Telangana",
+      "hi": "तेलंगाना के अंदर असीमित यात्राएँ, ज़ीरो किराया",
+      "te": "తెలంగాణలో అపరిమిత ప్రయాణాలు, సున్నా ఛార్జీ"
+    },
+    "amount": null,
+    "unit": null,
+    "source": {
+      "doc": "ts_mahalakshmi_bus.pdf",
+      "page": 1,
+      "quote": "They can travel anywhere within the borders of Telangana State in Palle velugu and Express buses"
+    }
+  },
+  "documents_required": [
+    "aadhaar"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "No application. Show Aadhaar or Telangana address proof to the conductor.",
+      "hi": "कोई आवेदन नहीं। कंडक्टर को आधार या तेलंगाना पता प्रमाण दिखाएँ।",
+      "te": "దరఖాస్తు అవసరం లేదు. కండక్టర్‌కు ఆధార్ లేదా తెలంగాణ చిరునామా రుజువు చూపించండి."
+    },
+    "source": {
+      "doc": "ts_mahalakshmi_bus.md",
+      "page": 2,
+      "quote": "No application is needed."
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "ts_mahalakshmi_bus.pdf",
+      "url": "https://goir.telangana.gov.in",
+      "label": "G.O.Ms.No.47 (TRB), 08/12/2023",
+      "downloaded": "2026-10-28",
+      "sha256": "c31e85d9f7847f95c3708ec15ad0a6e7c18178e3911d3f350d4e8ddd19016f55"
+    }
+  ]
+}

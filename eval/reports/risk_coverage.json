@@ -1,0 +1,228 @@
+{
+ "points": [
+  {
+   "t": 0.0,
+   "coverage": 0.667,
+   "risk": 0.417,
+   "lost_answerable": 0,
+   "accuracy": 0.722
+  },
+  {
+   "t": 0.02,
+   "coverage": 0.611,
+   "risk": 0.364,
+   "lost_answerable": 0,
+   "accuracy": 0.778
+  },
+  {
+   "t": 0.04,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.06,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.08,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.1,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.12,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.14,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.16,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.18,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.2,
+   "coverage": 0.556,
+   "risk": 0.3,
+   "lost_answerable": 0,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.22,
+   "coverage": 0.5,
+   "risk": 0.222,
+   "lost_answerable": 1,
+   "accuracy": 0.833
+  },
+  {
+   "t": 0.24,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.26,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.28,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.3,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.32,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.34,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.36,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.38,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.4,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.42,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.44,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.46,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.48,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.5,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.52,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.54,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.56,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.58,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  },
+  {
+   "t": 0.6,
+   "coverage": 0.444,
+   "risk": 0.125,
+   "lost_answerable": 1,
+   "accuracy": 0.889
+  }
+ ],
+ "chosen": {
+  "t": 0.24,
+  "coverage": 0.444,
+  "risk": 0.125,
+  "lost_answerable": 1,
+  "accuracy": 0.889
+ }
+}

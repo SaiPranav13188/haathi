@@ -1,0 +1,107 @@
+{
+  "scheme_id": "pm_vishwakarma",
+  "version": "2023-09",
+  "doc": "pm_vishwakarma.md",
+  "name": {
+    "en": "PM Vishwakarma",
+    "hi": "पीएम विश्वकर्मा",
+    "te": "పీఎం విశ్వకర్మ"
+  },
+  "tagline": {
+    "en": "Toolkit, training and cheap loans for artisans",
+    "hi": "कारीगरों के लिए टूलकिट, प्रशिक्षण और सस्ता ऋण",
+    "te": "చేతివృత్తుల వారికి టూల్‌కిట్, శిక్షణ, తక్కువ వడ్డీ రుణాలు"
+  },
+  "level": "central",
+  "state": null,
+  "categories": [
+    "workers"
+  ],
+  "official_url": "https://pmvishwakarma.gov.in",
+  "last_verified": "2026-10-28",
+  "review_status": "seed",
+  "changed_on": null,
+  "change_note": null,
+  "rules": [
+    {
+      "id": "r1",
+      "field": "occupation",
+      "op": "in",
+      "value": [
+        "artisan"
+      ],
+      "source": {
+        "doc": "pm_vishwakarma.md",
+        "page": 1,
+        "quote": "An artisan or craftsperson working in one of the 18 listed family-based trades is eligible."
+      }
+    },
+    {
+      "id": "r2",
+      "field": "age",
+      "op": "gte",
+      "value": 18,
+      "source": {
+        "doc": "pm_vishwakarma.md",
+        "page": 1,
+        "quote": "The applicant must be at least 18 years old on the date of registration."
+      }
+    },
+    {
+      "id": "r3",
+      "field": "is_govt_employee",
+      "op": "eq",
+      "value": false,
+      "source": {
+        "doc": "pm_vishwakarma.md",
+        "page": 1,
+        "quote": "Persons in government service and their family members are not eligible."
+      }
+    }
+  ],
+  "logic": "r1 AND r2 AND r3",
+  "benefit": {
+    "summary": {
+      "en": "₹15,000 toolkit + loans up to ₹3 lakh at 5%",
+      "hi": "₹15,000 टूलकिट + 5% पर ₹3 लाख तक ऋण",
+      "te": "₹15,000 టూల్‌కిట్ + 5% వడ్డీకి ₹3 లక్షల వరకు రుణం"
+    },
+    "amount": 15000,
+    "unit": {
+      "en": "toolkit",
+      "hi": "टूलकिट",
+      "te": "టూల్‌కిట్"
+    },
+    "source": {
+      "doc": "pm_vishwakarma.md",
+      "page": 2,
+      "quote": "a toolkit incentive of ₹15,000"
+    }
+  },
+  "documents_required": [
+    "aadhaar",
+    "bank_passbook",
+    "ration_card"
+  ],
+  "how_to_apply": {
+    "summary": {
+      "en": "Register at a CSC with Aadhaar biometric verification.",
+      "hi": "आधार बायोमेट्रिक सत्यापन के साथ CSC पर पंजीकरण करें।",
+      "te": "ఆధార్ బయోమెట్రిక్ ధృవీకరణతో CSCలో నమోదు చేయండి."
+    },
+    "source": {
+      "doc": "pm_vishwakarma.md",
+      "page": 2,
+      "quote": "Register at a Common Service Centre (CSC) with Aadhaar-based biometric verification."
+    }
+  },
+  "official_sources": [
+    {
+      "doc": "pm_vishwakarma.pdf",
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/sep/doc2023918253401.pdf",
+      "label": "PIB official backgrounder, Ministry of MSME (Sept 2023)",
+      "downloaded": "2026-10-28",
+      "sha256": "2d1cd8a41ae8139a819786232b7ae5ccbc567819a19d38bbc2db745297489204"
+    }
+  ]
+}
